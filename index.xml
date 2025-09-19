@@ -6,11 +6,17 @@
       <description>Last 10 notes on Quartz 4</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>Welcome</title>
-    <link>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/Welcome</link>
-    <guid>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/Welcome</guid>
-    <description><![CDATA[ This is your new vault. Make a note of something, create a link, or try the Importer! When you’re ready, delete this note and make the vault your own. ]]></description>
-    <pubDate>Fri, 19 Sep 2025 05:57:15 GMT</pubDate>
+    <title>HDFS体系结构</title>
+    <link>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84</link>
+    <guid>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84</guid>
+    <description><![CDATA[ 命名空间管理 通信协议 HDFS体系结构的局限性. ]]></description>
+    <pubDate>Fri, 19 Sep 2025 08:03:00 GMT</pubDate>
+  </item><item>
+    <title>HDFS概述</title>
+    <link>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E6%A6%82%E8%BF%B0</link>
+    <guid>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E6%A6%82%E8%BF%B0</guid>
+    <description><![CDATA[ 文件系统基本常识 在文件系统中，所有的磁盘内容会以文件和目录的形式呈现给用户。不同的文件系统（如 NTFS、ext4、FAT32）有各自独特的命名空间，即文件路径的组织结构。 物理磁盘结构 在磁盘的物理层面，磁盘被分为扇区（Sector）。每个扇区的大小通常为512字节或4KB。多个扇区组成簇（Cluster，或称块Block），一个簇是文件系统在存储数据时的基本单位，通常一个簇的大小是4KB、8KB或更大。文件系统将文件数据按簇来存储，簇的大小会影响磁盘空间的利用率。 文件的数据和元数据 文件数据：是指文件的实际内容，存储在磁盘上用于保存用户信息的部分。 文件元数据：包含文件的属性信息，如：... ]]></description>
+    <pubDate>Fri, 19 Sep 2025 08:01:39 GMT</pubDate>
   </item><item>
     <title>首页</title>
     <link>https://quartz.jzhao.xyz/</link>
@@ -59,12 +65,6 @@
     <guid>https://quartz.jzhao.xyz/learn_c/data-type</guid>
     <description><![CDATA[  数据类型 (关键字)常见声明方式占位符 (printf/scanf)说明charchar c = &#039;A&#039;;%c字符类型（实际上存储整数，对应 ASCII 码）。通常 1 字节 (8 位)。signed charsigned char sc = -10;%c明确带符号的字符，范围一般是 -128 ~ 127。unsigned charunsigned char uc = 250;%c 或 %hhu无符号字符，范围 0 ~ 255。intint x = 42;%d 或 %i整数，通常 4 字节，范围约 -2,147,483,648 ~ 2,147,483,647。short ... ]]></description>
     <pubDate>Thu, 18 Sep 2025 00:41:07 GMT</pubDate>
-  </item><item>
-    <title>回归模型</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B</guid>
-    <description><![CDATA[ 变量x_1,\cdots,x_p与随机变量y存在相关关系，即确定x_1,\cdots,x_p的取值后可以确定y的分布，y与x_1,\cdots,x_p之间的概率模型为y=f(x_i,\cdots,x_p)+\epsilon当f为线性函数时，称模型为线性回归模型。. ]]></description>
-    <pubDate>Thu, 18 Sep 2025 00:40:48 GMT</pubDate>
   </item>
     </channel>
   </rss>
