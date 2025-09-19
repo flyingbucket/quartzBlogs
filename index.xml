@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Quartz 4</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on Quartz 4</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Welcome</title>
+    <link>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/Welcome</link>
+    <guid>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/Welcome</guid>
+    <description><![CDATA[ This is your new vault. Make a note of something, create a link, or try the Importer! When you’re ready, delete this note and make the vault your own. ]]></description>
+    <pubDate>Fri, 19 Sep 2025 05:57:15 GMT</pubDate>
+  </item><item>
+    <title>首页</title>
+    <link>https://quartz.jzhao.xyz/</link>
+    <guid>https://quartz.jzhao.xyz/</guid>
+    <description><![CDATA[ 欢迎来到我的 Quartz Blogs Weclome! 这是我的数字花园首页,你可以从左边的目录或搜索框进入笔记。. ]]></description>
+    <pubDate>Fri, 19 Sep 2025 05:42:38 GMT</pubDate>
+  </item><item>
+    <title>1.基本假设</title>
+    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/1.%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE</link>
+    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/1.%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE</guid>
+    <description><![CDATA[ 解释变量x_,\cdots,x_p非随机变量，样本\{(y_i,X_i) \mid 1\leq i\leq n\}观测值x_{i1},\cdots ,x_{ip}为常数 误差项随机变量\epsilon 满足 E[\epsilon_i]=0,i=1\cdots ,n \begin{cases} \text{Var}(\epsilon_i) = \sigma^2, &amp; i = 1, \cdots, n \\ \text{Cov}(\epsilon_i, \epsilon_j) = 0, &amp; i \neq j \end{cases} 即各样本点上的误差项均值为零、方差相同且相互独立。... ]]></description>
+    <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
+  </item><item>
+    <title>2.最小二乘估计OLSE</title>
+    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/2.%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1OLSE</link>
+    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/2.%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1OLSE</guid>
+    <description><![CDATA[ 求解一元线性回归模型，就是要给出真实回归模型y=\beta_1x+\beta_0中\beta_0,\beta_1的估计\hat{\beta_0},\hat{\beta_1}.但由于残差项\epsilon的分布类型是未知的，无法推理出y的分布类型，进而估计，于是采用最小二乘法估计\beta_0,\beta_1. ]]></description>
+    <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
+  </item><item>
+    <title>5.显著性检验</title>
+    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/5.%E6%98%BE%E8%91%97%E6%80%A7%E6%A3%80%E9%AA%8C</link>
+    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/5.%E6%98%BE%E8%91%97%E6%80%A7%E6%A3%80%E9%AA%8C</guid>
+    <description><![CDATA[ H_0: \beta_1 = 0 \quad\text{vs.}\quad H_1: \beta_1 \neq 0 t检验 在假定误差项满足独立同分布，且 \varepsilon_i \sim N(0, \sigma^2) 的条件下： 回归系数估计的分布 假设\epsilon_i \sim N(0,\sigma^2） 则\hat{\beta}_1 \sim N\left(\beta_1, \dfrac{\sigma^2}{L_{xx}}\right) ，其中 L_{xx} = \sum (x_i - \bar{x})^2 在 H_0 下，有 t = \frac{\hat{\beta}_1 - ... ]]></description>
+    <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
+  </item><item>
+    <title>6.残差分析</title>
+    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/6.%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90</link>
+    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/6.%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90</guid>
+    <description><![CDATA[ 残差分析：判断真实模型是否为线性模型 若为线性模型则必满足 Ee_i = Ex_i \cdot e_i = 0 残差应在 0 附近随机波动 残差 e_i 的方差 \begin{aligned} Var(e_i) &amp;= Var(y_i - \hat{y}_i) \\ &amp;= Var(y_i) + Var(\hat{y}_i) - 2Cov(y_i, \hat{y}_i) \end{aligned} (1) Var(y_i) = \sigma^2 (2) \begin{aligned} Var(\hat{y}_i) &amp;= Var(\hat{\beta}_0 + \hat{\b... ]]></description>
+    <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
+  </item><item>
+    <title>4.误差随机变量方差的估计</title>
+    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/4.%E8%AF%AF%E5%B7%AE%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1</link>
+    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/4.%E8%AF%AF%E5%B7%AE%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1</guid>
+    <description><![CDATA[ \hat{\sigma}^2 = \frac{1}{n-2} \sum (y_i - \hat{y}_i)^2 其中 \hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i. ]]></description>
+    <pubDate>Thu, 18 Sep 2025 01:49:15 GMT</pubDate>
+  </item><item>
+    <title>3.回归系数的性质</title>
+    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/3.%E5%9B%9E%E5%BD%92%E7%B3%BB%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8</link>
+    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/3.%E5%9B%9E%E5%BD%92%E7%B3%BB%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8</guid>
+    <description><![CDATA[ 线性性 \hat{\beta_1},\hat{\beta_0}是 随机变量y_i的线性函数 无偏性 \begin{aligned} E\hat{\beta_1} &amp;=E[\frac{\Sigma_{i=1}^n (x_i-\bar{x})y_i}{\Sigma_{i=1}^n(x_i-\bar{x})^2}] \\ &amp;=\frac{\Sigma_{i=1}^n (x_i-\bar{x})E[y_i]}{\Sigma_{i=1}^n(x_i-\bar{x})^2} \\ &amp;=\frac{\Sigma_{i=1}^n (x_i-\bar{x})(\beta_1x_i+\be... ]]></description>
+    <pubDate>Thu, 18 Sep 2025 01:20:25 GMT</pubDate>
+  </item><item>
+    <title>data type</title>
+    <link>https://quartz.jzhao.xyz/learn_c/data-type</link>
+    <guid>https://quartz.jzhao.xyz/learn_c/data-type</guid>
+    <description><![CDATA[  数据类型 (关键字)常见声明方式占位符 (printf/scanf)说明charchar c = &#039;A&#039;;%c字符类型（实际上存储整数，对应 ASCII 码）。通常 1 字节 (8 位)。signed charsigned char sc = -10;%c明确带符号的字符，范围一般是 -128 ~ 127。unsigned charunsigned char uc = 250;%c 或 %hhu无符号字符，范围 0 ~ 255。intint x = 42;%d 或 %i整数，通常 4 字节，范围约 -2,147,483,648 ~ 2,147,483,647。short ... ]]></description>
+    <pubDate>Thu, 18 Sep 2025 00:41:07 GMT</pubDate>
+  </item><item>
+    <title>回归模型</title>
+    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B</link>
+    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E5%9B%9E%E5%BD%92%E6%A8%A1%E5%9E%8B</guid>
+    <description><![CDATA[ 变量x_1,\cdots,x_p与随机变量y存在相关关系，即确定x_1,\cdots,x_p的取值后可以确定y的分布，y与x_1,\cdots,x_p之间的概率模型为y=f(x_i,\cdots,x_p)+\epsilon当f为线性函数时，称模型为线性回归模型。. ]]></description>
+    <pubDate>Thu, 18 Sep 2025 00:40:48 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
