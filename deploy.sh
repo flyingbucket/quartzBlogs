@@ -13,9 +13,9 @@ if [ "$CURRENT_BRANCH" != "$MAIN_BRANCH" ]; then
   git checkout $MAIN_BRANCH
 fi
 
-# 拉取最新代码
-echo "拉取最新代码..."
-git pull origin $MAIN_BRANCH
+# # 拉取最新代码
+# echo "拉取最新代码..."
+# git pull origin $MAIN_BRANCH
 
 # 构建网站
 echo "开始构建网站..."
