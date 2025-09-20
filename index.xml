@@ -6,6 +6,24 @@
       <description>Last 10 notes on Quartz 4</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>宏macro</title>
+    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</link>
+    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</guid>
+    <description><![CDATA[ 在C语言中，宏是通过预处理器进行文本替换的一种功能。宏通常用于简化代码，增加可读性，或者在编译时执行一些条件编译操作。宏在编译过程的预处理阶段展开，它们不会在运行时消耗资源。 宏的种类 对象宏（Object-like Macros） 对象宏类似于常量的替代，通常用于常量定义。它是直接用一个名称替代某个值或表达式。 示例： #define PI 3.14159 #define MAX_BUFFER_SIZE 1024 这样在代码中，PI 会被替换成 3.14159，MAX_BUFFER_SIZE 会被替换成 1024。 函数宏（Function-like Macros） 函数宏类似于函数，但它在... ]]></description>
+    <pubDate>Sat, 20 Sep 2025 02:23:12 GMT</pubDate>
+  </item><item>
+    <title>局部变量、全局变量与静态变量</title>
+    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</link>
+    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</guid>
+    <description><![CDATA[ 局部变量 作用域： 局部变量的作用域仅限于它所在的函数、if、for 或 while 等代码块内部。在代码块外部无法访问该变量。 例如，for 循环中声明的变量只在循环内部有效。 生存期： 局部变量的生存期从它们被声明时开始，直到代码块执行完毕为止。它们通常保存在栈上，因此当程序离开作用域时，局部变量会被销毁。 示例： void func() { int x = 10; // 局部变量 x printf(&quot;%d\n&quot;, x); } // x 在 func 函数外部无法访问 在上面的代码中，x 仅在 func() 函数内部有效，退出函数后 x 被销毁。 全局变量 作用域和生存... ]]></description>
+    <pubDate>Sat, 20 Sep 2025 02:23:12 GMT</pubDate>
+  </item><item>
+    <title>data type</title>
+    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</link>
+    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</guid>
+    <description><![CDATA[  数据类型 (关键字)常见定义/声明方式占位符 (printf/scanf)说明charchar c = &#039;A&#039;;%c字符类型（实际上存储整数，对应 ASCII 码）。通常 1 字节 (8 位)。signed charsigned char sc = -10;%c明确带符号的字符，范围一般是 -128 ~ 127。unsigned charunsigned char uc = 250;%c 或 %hhu无符号字符，范围 0 ~ 255。intint x = 42;%d 或 %i整数，通常 4 字节，范围约 -2,147,483,648 ~ 2,147,483,647。sho... ]]></description>
+    <pubDate>Sat, 20 Sep 2025 02:23:12 GMT</pubDate>
+  </item><item>
     <title>HDFS体系结构</title>
     <link>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84</link>
     <guid>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84</guid>
@@ -47,24 +65,6 @@
     <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/6.%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90</guid>
     <description><![CDATA[ 残差分析：判断真实模型是否为线性模型 若为线性模型则必满足 Ee_i = Ex_i \cdot e_i = 0 残差应在 0 附近随机波动 残差 e_i 的方差 \begin{aligned} Var(e_i) &amp;= Var(y_i - \hat{y}_i) \\ &amp;= Var(y_i) + Var(\hat{y}_i) - 2Cov(y_i, \hat{y}_i) \end{aligned} (1) Var(y_i) = \sigma^2 (2) \begin{aligned} Var(\hat{y}_i) &amp;= Var(\hat{\beta}_0 + \hat{\b... ]]></description>
     <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
-  </item><item>
-    <title>4.误差随机变量方差的估计</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/4.%E8%AF%AF%E5%B7%AE%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/4.%E8%AF%AF%E5%B7%AE%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E6%96%B9%E5%B7%AE%E7%9A%84%E4%BC%B0%E8%AE%A1</guid>
-    <description><![CDATA[ \hat{\sigma}^2 = \frac{1}{n-2} \sum (y_i - \hat{y}_i)^2 其中 \hat{y}_i = \hat{\beta}_0 + \hat{\beta}_1 x_i. ]]></description>
-    <pubDate>Thu, 18 Sep 2025 01:49:15 GMT</pubDate>
-  </item><item>
-    <title>3.回归系数的性质</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/3.%E5%9B%9E%E5%BD%92%E7%B3%BB%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/3.%E5%9B%9E%E5%BD%92%E7%B3%BB%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8</guid>
-    <description><![CDATA[ 线性性 \hat{\beta_1},\hat{\beta_0}是 随机变量y_i的线性函数 无偏性 \begin{aligned} E\hat{\beta_1} &amp;=E[\frac{\Sigma_{i=1}^n (x_i-\bar{x})y_i}{\Sigma_{i=1}^n(x_i-\bar{x})^2}] \\ &amp;=\frac{\Sigma_{i=1}^n (x_i-\bar{x})E[y_i]}{\Sigma_{i=1}^n(x_i-\bar{x})^2} \\ &amp;=\frac{\Sigma_{i=1}^n (x_i-\bar{x})(\beta_1x_i+\be... ]]></description>
-    <pubDate>Thu, 18 Sep 2025 01:20:25 GMT</pubDate>
-  </item><item>
-    <title>data type</title>
-    <link>https://quartz.jzhao.xyz/learn_c/data-type</link>
-    <guid>https://quartz.jzhao.xyz/learn_c/data-type</guid>
-    <description><![CDATA[  数据类型 (关键字)常见声明方式占位符 (printf/scanf)说明charchar c = &#039;A&#039;;%c字符类型（实际上存储整数，对应 ASCII 码）。通常 1 字节 (8 位)。signed charsigned char sc = -10;%c明确带符号的字符，范围一般是 -128 ~ 127。unsigned charunsigned char uc = 250;%c 或 %hhu无符号字符，范围 0 ~ 255。intint x = 42;%d 或 %i整数，通常 4 字节，范围约 -2,147,483,648 ~ 2,147,483,647。short ... ]]></description>
-    <pubDate>Thu, 18 Sep 2025 00:41:07 GMT</pubDate>
   </item>
     </channel>
   </rss>
