@@ -6,21 +6,39 @@
       <description>Last 10 notes on Quartz 4</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>flyingbucket&#039;s notes</title>
+    <link>https://quartz.jzhao.xyz/</link>
+    <guid>https://quartz.jzhao.xyz/</guid>
+    <description><![CDATA[ 欢迎来到我的 Quartz Blogs Weclome! 这是学习笔记的首页,你可以从左边的目录或搜索框进入笔记。 这些笔记并不会完整记录相关知识，而是以知识卡片的形式对重点内容进行梳理以便后续查阅。 原始笔记使用obsidian记录，通过quartz工具将obsidian vaults转化为网页并发布到github pages。. ]]></description>
+    <pubDate>Sat, 20 Sep 2025 04:56:04 GMT</pubDate>
+  </item><item>
+    <title>逻辑运算符</title>
+    <link>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6</link>
+    <guid>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6</guid>
+    <description><![CDATA[ C 语言的逻辑运算符 C 语言中共有 3 个逻辑运算符，用于对表达式的真假进行逻辑运算，返回结果为 1（真，true）或 0（假，false）。 运算符含义示例结果说明&amp;&amp;逻辑与 ANDa &amp;&amp; b两个操作数都为真时结果为 1，否则为 0||逻辑或ORa || b两个操作数有一个为真时结果为 1，否则为 0!逻辑非 NOT!a如果 a 为真，则结果为 0；如果 a 为假，结果为 1 逻辑与 &amp;&amp; 表达式 a &amp;&amp; b：当且仅当 a 和 b 都为真时，结果为真（1）；否则为假（0）。 短路特性：如果 a 为假（0），则 b 不再计算... ]]></description>
+    <pubDate>Sat, 20 Sep 2025 04:09:06 GMT</pubDate>
+  </item><item>
+    <title>局部变量、全局变量与静态变量</title>
+    <link>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</link>
+    <guid>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</guid>
+    <description><![CDATA[ 局部变量 作用域： 局部变量的作用域仅限于它所在的函数、if、for 或 while 等代码块内部。在代码块外部无法访问该变量。 例如，for 循环中声明的变量只在循环内部有效。 生存期： 局部变量的生存期从它们被声明时开始，直到代码块执行完毕为止。它们通常保存在栈上，因此当程序离开作用域时，局部变量会被销毁。 示例： void func() { int x = 10; // 局部变量 x printf(&quot;%d\n&quot;, x); } // x 在 func 函数外部无法访问 在上面的代码中，x 仅在 func() 函数内部有效，退出函数后 x 被销毁。 全局变量 作用域和生存... ]]></description>
+    <pubDate>Sat, 20 Sep 2025 03:57:01 GMT</pubDate>
+  </item><item>
+    <title>遮蔽(shadowing）</title>
+    <link>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E9%81%AE%E8%94%BD(shadowing%EF%BC%89</link>
+    <guid>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E9%81%AE%E8%94%BD(shadowing%EF%BC%89</guid>
+    <description><![CDATA[ 遮蔽（Shadowing） 在 C 语言中，如果在某个作用域内定义了一个与外层作用域（例如全局作用域或函数外层作用域）同名的变量，那么这个新的变量会在当前作用域内“遮蔽”（shadow）外层作用域中的同名变量。 这意味着： 在当前作用域中，访问到的将是局部定义的新变量； 外层的同名变量不会被销毁或修改，只是暂时“不可见”； 一旦离开该局部作用域，外层变量重新可见，并且保持原有值。 函数中的遮蔽 #include &lt;stdio.h&gt; int x = 10; // 全局变量 x void func() { int x = 20; // 局部变量 x，遮蔽了全局变量 x printf(&... ]]></description>
+    <pubDate>Sat, 20 Sep 2025 03:53:58 GMT</pubDate>
+  </item><item>
     <title>宏macro</title>
-    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</link>
-    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</guid>
+    <link>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</link>
+    <guid>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</guid>
     <description><![CDATA[ 在C语言中，宏是通过预处理器进行文本替换的一种功能。宏通常用于简化代码，增加可读性，或者在编译时执行一些条件编译操作。宏在编译过程的预处理阶段展开，它们不会在运行时消耗资源。 宏的种类 对象宏（Object-like Macros） 对象宏类似于常量的替代，通常用于常量定义。它是直接用一个名称替代某个值或表达式。 示例： #define PI 3.14159 #define MAX_BUFFER_SIZE 1024 这样在代码中，PI 会被替换成 3.14159，MAX_BUFFER_SIZE 会被替换成 1024。 函数宏（Function-like Macros） 函数宏类似于函数，但它在... ]]></description>
     <pubDate>Sat, 20 Sep 2025 02:23:12 GMT</pubDate>
   </item><item>
-    <title>局部变量、全局变量与静态变量</title>
-    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</link>
-    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</guid>
-    <description><![CDATA[ 局部变量 作用域： 局部变量的作用域仅限于它所在的函数、if、for 或 while 等代码块内部。在代码块外部无法访问该变量。 例如，for 循环中声明的变量只在循环内部有效。 生存期： 局部变量的生存期从它们被声明时开始，直到代码块执行完毕为止。它们通常保存在栈上，因此当程序离开作用域时，局部变量会被销毁。 示例： void func() { int x = 10; // 局部变量 x printf(&quot;%d\n&quot;, x); } // x 在 func 函数外部无法访问 在上面的代码中，x 仅在 func() 函数内部有效，退出函数后 x 被销毁。 全局变量 作用域和生存... ]]></description>
-    <pubDate>Sat, 20 Sep 2025 02:23:12 GMT</pubDate>
-  </item><item>
     <title>data type</title>
-    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</link>
-    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</guid>
+    <link>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</link>
+    <guid>https://quartz.jzhao.xyz/c%E8%AF%AD%E8%A8%80/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</guid>
     <description><![CDATA[  数据类型 (关键字)常见定义/声明方式占位符 (printf/scanf)说明charchar c = &#039;A&#039;;%c字符类型（实际上存储整数，对应 ASCII 码）。通常 1 字节 (8 位)。signed charsigned char sc = -10;%c明确带符号的字符，范围一般是 -128 ~ 127。unsigned charunsigned char uc = 250;%c 或 %hhu无符号字符，范围 0 ~ 255。intint x = 42;%d 或 %i整数，通常 4 字节，范围约 -2,147,483,648 ~ 2,147,483,647。sho... ]]></description>
     <pubDate>Sat, 20 Sep 2025 02:23:12 GMT</pubDate>
   </item><item>
@@ -36,12 +54,6 @@
     <description><![CDATA[ 文件系统基本常识 在文件系统中，所有的磁盘内容会以文件和目录的形式呈现给用户。不同的文件系统（如 NTFS、ext4、FAT32）有各自独特的命名空间，即文件路径的组织结构。 物理磁盘结构 在磁盘的物理层面，磁盘被分为扇区（Sector）。每个扇区的大小通常为512字节或4KB。多个扇区组成簇（Cluster，或称块Block），一个簇是文件系统在存储数据时的基本单位，通常一个簇的大小是4KB、8KB或更大。文件系统将文件数据按簇来存储，簇的大小会影响磁盘空间的利用率。 文件的数据和元数据 文件数据：是指文件的实际内容，存储在磁盘上用于保存用户信息的部分。 文件元数据：包含文件的属性信息，如：... ]]></description>
     <pubDate>Fri, 19 Sep 2025 08:01:39 GMT</pubDate>
   </item><item>
-    <title>首页</title>
-    <link>https://quartz.jzhao.xyz/</link>
-    <guid>https://quartz.jzhao.xyz/</guid>
-    <description><![CDATA[ 欢迎来到我的 Quartz Blogs Weclome! 这是我的数字花园首页,你可以从左边的目录或搜索框进入笔记。. ]]></description>
-    <pubDate>Fri, 19 Sep 2025 05:42:38 GMT</pubDate>
-  </item><item>
     <title>1.基本假设</title>
     <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/1.%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE</link>
     <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/1.%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE</guid>
@@ -52,18 +64,6 @@
     <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/2.%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1OLSE</link>
     <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/2.%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1OLSE</guid>
     <description><![CDATA[ 求解一元线性回归模型，就是要给出真实回归模型y=\beta_1x+\beta_0中\beta_0,\beta_1的估计\hat{\beta_0},\hat{\beta_1}.但由于残差项\epsilon的分布类型是未知的，无法推理出y的分布类型，进而估计，于是采用最小二乘法估计\beta_0,\beta_1. ]]></description>
-    <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
-  </item><item>
-    <title>5.显著性检验</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/5.%E6%98%BE%E8%91%97%E6%80%A7%E6%A3%80%E9%AA%8C</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/5.%E6%98%BE%E8%91%97%E6%80%A7%E6%A3%80%E9%AA%8C</guid>
-    <description><![CDATA[ H_0: \beta_1 = 0 \quad\text{vs.}\quad H_1: \beta_1 \neq 0 t检验 在假定误差项满足独立同分布，且 \varepsilon_i \sim N(0, \sigma^2) 的条件下： 回归系数估计的分布 假设\epsilon_i \sim N(0,\sigma^2） 则\hat{\beta}_1 \sim N\left(\beta_1, \dfrac{\sigma^2}{L_{xx}}\right) ，其中 L_{xx} = \sum (x_i - \bar{x})^2 在 H_0 下，有 t = \frac{\hat{\beta}_1 - ... ]]></description>
-    <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
-  </item><item>
-    <title>6.残差分析</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/6.%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/6.%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90</guid>
-    <description><![CDATA[ 残差分析：判断真实模型是否为线性模型 若为线性模型则必满足 Ee_i = Ex_i \cdot e_i = 0 残差应在 0 附近随机波动 残差 e_i 的方差 \begin{aligned} Var(e_i) &amp;= Var(y_i - \hat{y}_i) \\ &amp;= Var(y_i) + Var(\hat{y}_i) - 2Cov(y_i, \hat{y}_i) \end{aligned} (1) Var(y_i) = \sigma^2 (2) \begin{aligned} Var(\hat{y}_i) &amp;= Var(\hat{\beta}_0 + \hat{\b... ]]></description>
     <pubDate>Fri, 19 Sep 2025 00:55:19 GMT</pubDate>
   </item>
     </channel>
