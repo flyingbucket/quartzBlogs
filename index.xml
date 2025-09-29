@@ -6,65 +6,65 @@
       <description>Last 10 notes on Quartz 4</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
-    <title>局部变量、全局变量与静态变量</title>
-    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</link>
-    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E3%80%81%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E4%B8%8E%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F</guid>
-    <description><![CDATA[ 局部变量 作用域： 局部变量的作用域仅限于它所在的函数、if、for 或 while 等代码块内部。在代码块外部无法访问该变量。 例如，for 循环中声明的变量只在循环内部有效。 生存期： 局部变量的生存期从它们被声明时开始，直到代码块执行完毕为止。它们通常保存在栈上，因此当程序离开作用域时，局部变量会被销毁。 示例： void func() { int x = 10; // 局部变量 x printf(&quot;%d\n&quot;, x); } // x 在 func 函数外部无法访问 在上面的代码中，x 仅在 func() 函数内部有效，退出函数后 x 被销毁。 全局变量 作用域和生存... ]]></description>
-    <pubDate>Fri, 19 Sep 2025 16:45:44 GMT</pubDate>
+    <title>deeplearning basics</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/</guid>
+    <description><![CDATA[ 本章节从图片分类任务入手，以最基本的模型为例介绍了深度学习模型的基本结构。 分类器 1.K近邻 2.线性分类器 损失函数 3.softmax损失 4.SVM损失 正则化 5.正则化 优化器 6.优化器 神经网络7.神经网络 梯度回传8.梯度回传 . ]]></description>
+    <pubDate>Mon, 29 Sep 2025 14:39:43 GMT</pubDate>
   </item><item>
-    <title>宏macro</title>
-    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</link>
-    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E5%AE%8Fmacro</guid>
-    <description><![CDATA[ 在C语言中，宏是通过预处理器进行文本替换的一种功能。宏通常用于简化代码，增加可读性，或者在编译时执行一些条件编译操作。宏在编译过程的预处理阶段展开，它们不会在运行时消耗资源。 宏的种类 对象宏（Object-like Macros） 对象宏类似于常量的替代，通常用于常量定义。它是直接用一个名称替代某个值或表达式。 示例： #define PI 3.14159 #define MAX_BUFFER_SIZE 1024 这样在代码中，PI 会被替换成 3.14159，MAX_BUFFER_SIZE 会被替换成 1024。 函数宏（Function-like Macros） 函数宏类似于函数，但它在... ]]></description>
-    <pubDate>Fri, 19 Sep 2025 13:32:31 GMT</pubDate>
+    <title>3.softmax损失</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/3.softmax%E6%8D%9F%E5%A4%B1</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/3.softmax%E6%8D%9F%E5%A4%B1</guid>
+    <description><![CDATA[ 1. ]]></description>
+    <pubDate>Mon, 29 Sep 2025 14:36:58 GMT</pubDate>
   </item><item>
-    <title>data type</title>
-    <link>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</link>
-    <guid>https://quartz.jzhao.xyz/learn_c/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/data-type</guid>
-    <description><![CDATA[  数据类型 (关键字)常见定义/声明方式占位符 (printf/scanf)说明charchar c = &#039;A&#039;;%c字符类型（实际上存储整数，对应 ASCII 码）。通常 1 字节 (8 位)。signed charsigned char sc = -10;%c明确带符号的字符，范围一般是 -128 ~ 127。unsigned charunsigned char uc = 250;%c 或 %hhu无符号字符，范围 0 ~ 255。intint x = 42;%d 或 %i整数，通常 4 字节，范围约 -2,147,483,648 ~ 2,147,483,647。sho... ]]></description>
-    <pubDate>Fri, 19 Sep 2025 13:09:35 GMT</pubDate>
+    <title>2.线性分类器</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/2.%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/2.%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB%E5%99%A8</guid>
+    <description><![CDATA[ 基本思想 线性分类器是一类通过 输入特征的线性组合 来进行分类的模型。 其核心思想是用一个超平面将不同类别的数据分开。 数学形式 给定输入向量 x \in \mathbb{R}^d，权重矩阵 W \in \mathbb{R}^{d \times K}，偏置向量 b \in \mathbb{R}^K， 线性分类器的输出（logits）为： s = W^\top x + b 其中 s \in \mathbb{R}^K，表示对 K 个类别的打分。 预测类别为： \hat{y} = \arg\max_j s_j 常见的线性分类器 感知机（Perceptron） 使用符号函数作为分类依据 仅能处理线性可... ]]></description>
+    <pubDate>Mon, 29 Sep 2025 14:34:12 GMT</pubDate>
   </item><item>
-    <title>HDFS概述</title>
-    <link>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E6%A6%82%E8%BF%B0</link>
-    <guid>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E6%A6%82%E8%BF%B0</guid>
-    <description><![CDATA[ 文件系统基本常识 在文件系统中，所有的磁盘内容会以文件和目录的形式呈现给用户。不同的文件系统（如 NTFS、ext4、FAT32）有各自独特的命名空间，即文件路径的组织结构。 物理磁盘结构 在磁盘的物理层面，磁盘被分为扇区（Sector）。每个扇区的大小通常为512字节或4KB。多个扇区组成簇（Cluster，或称块Block），一个簇是文件系统在存储数据时的基本单位，通常一个簇的大小是4KB、8KB或更大。文件系统将文件数据按簇来存储，簇的大小会影响磁盘空间的利用率。 文件的数据和元数据 文件数据：是指文件的实际内容，存储在磁盘上用于保存用户信息的部分。 文件元数据：包含文件的属性信息，如：... ]]></description>
-    <pubDate>Fri, 19 Sep 2025 09:40:48 GMT</pubDate>
+    <title>1.K近邻</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/1.K%E8%BF%91%E9%82%BB</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/1.K%E8%BF%91%E9%82%BB</guid>
+    <description><![CDATA[ 近邻算法 首先给出一组数据X_{\mathbf{N} \times \mathbf{D}}以及对应的分类标签Y_\mathbf{N}作为训练数据，数据量为N,特征数为D,类别数m为Y中各不相同的数字的个数。一般来说N&gt;m。 推理时给出需要推理的D维向量X_{0}，计算它与所有已知标签的向量(即X行向量)的L1距离。 向量X_0与向量X_j的L1距离定义为： d_{L1}=\sum_{i=1}^{D} |X_0^i-X_j^i| 找出其中d_{L1}最小的j,对应的Y_j即为X_0的分类标签。 代码如下： class NeraestNeibour: def __init__(self): ... ]]></description>
+    <pubDate>Mon, 29 Sep 2025 14:30:50 GMT</pubDate>
   </item><item>
-    <title>HDFS体系结构</title>
-    <link>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84</link>
-    <guid>https://quartz.jzhao.xyz/%E5%88%86%E5%B8%83%E5%BC%8F/hadoop/HDFS/HDFS%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84</guid>
-    <description><![CDATA[ 命名空间管理 通信协议 HDFS体系结构的局限性. ]]></description>
-    <pubDate>Fri, 19 Sep 2025 09:40:48 GMT</pubDate>
+    <title>5.正则化</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/5.%E6%AD%A3%E5%88%99%E5%8C%96</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/5.%E6%AD%A3%E5%88%99%E5%8C%96</guid>
+    <description><![CDATA[ 通过将模型的总复杂程度加到损失函数中，可以限制模型的复杂程度，避免过拟合。 总体形式为： L = L_{\text{data}} + \lambda \, \Omega(\theta) 其中： L_{\text{data}} ：原始损失（如交叉熵、MSE） \Omega(\theta) ：正则项，用于衡量模型的复杂程度 \lambda ：正则化强度（超参数） 常见的正则项 1. ]]></description>
+    <pubDate>Mon, 29 Sep 2025 14:26:49 GMT</pubDate>
   </item><item>
-    <title>6.残差分析</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/6.%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/6.%E6%AE%8B%E5%B7%AE%E5%88%86%E6%9E%90</guid>
-    <description><![CDATA[ 残差分析：判断真实模型是否为线性模型 若为线性模型则必满足 Ee_i = Ex_i \cdot e_i = 0 残差应在 0 附近随机波动 残差 e_i 的方差 \begin{aligned} Var(e_i) &amp;= Var(y_i - \hat{y}_i) \\ &amp;= Var(y_i) + Var(\hat{y}_i) - 2Cov(y_i, \hat{y}_i) \end{aligned} (1) Var(y_i) = \sigma^2 (2) \begin{aligned} Var(\hat{y}_i) &amp;= Var(\hat{\beta}_0 + \hat{\b... ]]></description>
-    <pubDate>Thu, 18 Sep 2025 16:14:34 GMT</pubDate>
+    <title>4.SVM损失</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/4.SVM%E6%8D%9F%E5%A4%B1</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/4.SVM%E6%8D%9F%E5%A4%B1</guid>
+    <description><![CDATA[ 1. ]]></description>
+    <pubDate>Mon, 29 Sep 2025 14:19:15 GMT</pubDate>
   </item><item>
-    <title>1.基本假设</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/1.%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/1.%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE</guid>
-    <description><![CDATA[ 解释变量x_,\cdots,x_p非随机变量，样本\{(y_i,X_i) \mid 1\leq i\leq n\}观测值x_{i1},\cdots ,x_{ip}为常数 误差项随机变量\epsilon 满足 E[\epsilon_i]=0,i=1\cdots ,n \begin{cases} \text{Var}(\epsilon_i) = \sigma^2, &amp; i = 1, \cdots, n \\ \text{Cov}(\epsilon_i, \epsilon_j) = 0, &amp; i \neq j \end{cases} 即各样本点上的误差项均值为零、方差相同且相互独立。... ]]></description>
-    <pubDate>Thu, 18 Sep 2025 14:36:43 GMT</pubDate>
+    <title>3.归一化</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/3.%E5%BD%92%E4%B8%80%E5%8C%96</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/3.%E5%BD%92%E4%B8%80%E5%8C%96</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Mon, 29 Sep 2025 11:55:41 GMT</pubDate>
   </item><item>
-    <title>2.最小二乘估计OLSE</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/2.%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1OLSE</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/2.%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E4%BC%B0%E8%AE%A1OLSE</guid>
-    <description><![CDATA[ 求解一元线性回归模型，就是要给出真实回归模型y=\beta_1x+\beta_0中\beta_0,\beta_1的估计\hat{\beta_0},\hat{\beta_1}.但由于残差项\epsilon的分布类型是未知的，无法推理出y的分布类型，进而估计，于是采用最小二乘法估计\beta_0,\beta_1. ]]></description>
-    <pubDate>Thu, 18 Sep 2025 14:27:50 GMT</pubDate>
+    <title>4.全连接</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/4.%E5%85%A8%E8%BF%9E%E6%8E%A5</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/CNN/4.%E5%85%A8%E8%BF%9E%E6%8E%A5</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Mon, 29 Sep 2025 11:55:41 GMT</pubDate>
   </item><item>
-    <title>首页</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/</guid>
-    <description><![CDATA[ 欢迎来到我的 Quartz 这是我的数字花园首页。你可以从左边的目录或搜索框进入笔记。. ]]></description>
-    <pubDate>Thu, 18 Sep 2025 14:23:49 GMT</pubDate>
+    <title>6.优化器</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/6.%E4%BC%98%E5%8C%96%E5%99%A8</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/6.%E4%BC%98%E5%8C%96%E5%99%A8</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Mon, 29 Sep 2025 11:55:41 GMT</pubDate>
   </item><item>
-    <title>5.显著性检验</title>
-    <link>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/5.%E6%98%BE%E8%91%97%E6%80%A7%E6%A3%80%E9%AA%8C</link>
-    <guid>https://quartz.jzhao.xyz/%E6%95%B0%E7%90%86%E7%BB%9F%E8%AE%A12/%E5%9B%9E%E5%BD%92/%E4%B8%80%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92/5.%E6%98%BE%E8%91%97%E6%80%A7%E6%A3%80%E9%AA%8C</guid>
-    <description><![CDATA[ H_0: \beta_1 = 0 \quad\text{vs.}\quad H_1: \beta_1 \neq 0 t检验 在假定误差项满足独立同分布，且 \varepsilon_i \sim N(0, \sigma^2) 的条件下： 回归系数估计的分布 假设\epsilon_i \sim N(0,\sigma^2） 则\hat{\beta}_1 \sim N\left(\beta_1, \dfrac{\sigma^2}{L_{xx}}\right) ，其中 L_{xx} = \sum (x_i - \bar{x})^2 在 H_0 下，有 t = \frac{\hat{\beta}_1 - ... ]]></description>
-    <pubDate>Thu, 18 Sep 2025 10:17:32 GMT</pubDate>
+    <title>7.神经网络</title>
+    <link>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/7.%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C</link>
+    <guid>https://quartz.jzhao.xyz/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/deeplearning-basics/7.%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Mon, 29 Sep 2025 11:55:41 GMT</pubDate>
   </item>
     </channel>
   </rss>
