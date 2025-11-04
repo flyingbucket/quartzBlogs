@@ -1,5 +1,6 @@
 YARN包含三个组件：ResourceManager、ApplicationMaster、NodeManager
-![[YARN体系结构.png]]
+![[YARN体系结构_inverted.png]]
+
 ## ResourceManager
 运行在master节点上的常驻进程。
 RM包含两个组件：ResourceScheduler、ApplicationsManager
@@ -43,3 +44,8 @@ RM包含两个组件：ResourceScheduler、ApplicationsManager
 - YARN把MapRedue1.0中的JobTracker拆解为ResourceManager和ApplicationMaster。原本JobTrecker需要同时管理资源并监控应用状态，YARN中这两个任务分别由RM和AM来负责；原本的Jobtracker需要管理系统的所有应用，这些应用的管理逻辑都运行在master节点上，而YARN中每个任务都有自己的AM,AM运行在worker节点上，降低了master节点的负担。
 - YARN将MapReduce1.0中的资源管理和计算解耦，YARN仅负责资源调度，可以运行包括MapReduce在内的各类计算任务
 - YARN以容器而非Slot为单位管理资源，解决了资源限制浪费的问题
+
+
+
+
+
