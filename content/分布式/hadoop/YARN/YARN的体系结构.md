@@ -18,7 +18,7 @@ RM包含两个组件：ResourceScheduler、ApplicationsManager
 
 ## 容器（container）
 
-容器是YARN上资源调度的单位，和MapReduce1的Slot相比，具有一下改进：
+容器是YARN上资源调度的单位，和MapReduce1的Slot相比，具有以下改进：
 - **数量可变**：容器的数量由当前负载决定，不再固定；
 - **资源可变**：每个容器可请求不同的资源量；
 - **用途灵活**：容器可以执行任意类型任务（Map、Reduce、Spark executor、Tez task等）；

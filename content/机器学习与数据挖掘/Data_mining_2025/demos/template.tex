@@ -1,0 +1,378 @@
+\documentclass[a4paper,12pt]{report}
+\usepackage[margin=1in]{geometry} % to change the page dimensions
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{comment}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+%\usepackage{times}
+\usepackage{setspace}
+% \usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+%\graphicspath{{fig/}}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{array}  
+% \usepackage{fontspec,xunicode,xltxtra}
+% \renewcommand{\sfdefault}{cmr}
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[titletoc]{appendix}
+%\usepackage[top=30mm,bottom=30mm,left=20mm,right=20mm]{geometry}
+%\usepackage{cite}
+\usepackage[backend = biber, style = gb7714-2015, defernumbers=true]{biblatex}
+\renewcommand*{\bibfont}{\small}
+\addbibresource{reference.bib}
+%\usepackage{courier}
+\setmonofont{Courier New}
+\usepackage{listings}
+\lstset{tabsize=4, keepspaces=true,
+    xleftmargin=2em,xrightmargin=0em, aboveskip=1em,
+    %backgroundcolor=\color{gray!20},  % 定义背景颜色
+    frame=none,                       % 表示不要边框
+    extendedchars=false,              % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+    numberstyle=\ttfamily,
+    basicstyle=\ttfamily,
+    keywordstyle=\color{blue}\bfseries,
+    breakindent=10pt,
+    identifierstyle=,                 % nothing happens
+    commentstyle=\color{green}\small,  % 注释的设置
+    morecomment=[l][\color{green}]{\#},
+    numbers=left,stepnumber=1,numberstyle=\scriptsize,
+    showstringspaces=false,
+    showspaces=false,
+    flexiblecolumns=true,
+    breaklines=true, breakautoindent=true,breakindent=4em,
+    escapeinside={/*@}{@*/},
+}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{theorem}{定理}
+\newtheorem{definition}{定义}
+\newtheorem{corollary}{推论}
+\newtheorem{example}{例}
+\usepackage{amsfonts}
+%\usepackage{bm}
+\usepackage{booktabs} % for much better looking tables
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfigure} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+\usepackage{cases} %equation set
+\usepackage{multirow} %use table
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{hyperref}
+\hypersetup{colorlinks,linkcolor=black,anchorcolor=black,citecolor=black, pdfstartview=FitH,bookmarksnumbered=true,bookmarksopen=true,} % set href in tex & pdf
+%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode} % 插入matlab代码
+\XeTeXlinebreaklocale "zh"
+\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
+
+\makeatletter
+\newenvironment{breakablealgorithm}
+  {% \begin{breakablealgorithm}
+   \begin{center}
+     \refstepcounter{algorithm}% New algorithm
+     \hrule height.8pt depth0pt \kern2pt% \@fs@pre for \@fs@ruled
+     \renewcommand{\caption}[2][\relax]{% Make a new \caption
+       {\raggedright\textbf{\ALG@name~\thealgorithm} ##2\par}%
+       \ifx\relax##1\relax % #1 is \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##2}%
+       \else % #1 is not \relax
+         \addcontentsline{loa}{algorithm}{\protect\numberline{\thealgorithm}##1}%
+       \fi
+       \kern2pt\hrule\kern2pt
+     }
+  }{% \end{breakablealgorithm}
+     \kern2pt\hrule\relax% \@fs@post for \@fs@ruled
+   \end{center}
+  }
+\makeatother
+%%%%此处break 算法
+%---------------------------------------------------------------------
+%	页眉页脚设置
+%---------------------------------------------------------------------
+\fancypagestyle{plain}{
+    \pagestyle{fancy}      %改变章节首页页眉
+}
+
+\pagestyle{fancy}
+\lhead{\kaishu~数据挖掘实验报告~}
+%\rhead{\kaishu~xxx}
+\cfoot{\thepage}
+\titleformat{\chapter}{\centering\zihao{2}\heiti}{第\chinese{chapter}章}{1em}{}
+% \titleformat{\chapter*}{\centering\zihao{-1}\heiti}
+\begin{comment}
+%---------------------------------------------------------------------
+%	章节标题设置
+%---------------------------------------------------------------------
+\titleformat{\chapter}{\centering\zihao{-1}\heiti}{实验\chinese{chapter}}{1em}{}
+\titlespacing{\chapter}{0pt}{*0}{*6}
+\end{comment}
+%---------------------------------------------------------------------
+%	摘要标题设置
+%---------------------------------------------------------------------
+%\renewcommand{\abstractname}{摘要}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+%---------------------------------------------------------------------
+%	参考文献设置
+%---------------------------------------------------------------------
+%\renewcommand{\bibname}{\zihao{2}{\hspace{\fill}参\hspace{0.5em}考\hspace{0.5em}文\hspace{0.5em}献\hspace{\fill}}}
+\renewcommand{\bibname}{参考文献}
+\begin{comment}
+%---------------------------------------------------------------------
+%	引用文献设置为上标
+%---------------------------------------------------------------------
+\makeatletter
+\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
+\makeatother
+\end{comment}
+%---------------------------------------------------------------------
+%	目录页设置
+%---------------------------------------------------------------------
+%\renewcommand{\contentsname}{\zihao{-3} 目\quad 录}
+\renewcommand{\contentsname}{目录}
+\titlecontents{chapter}[0em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+\titlecontents{section}[2em]{\vspace{0.1\baselineskip}\songti\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+\titlecontents{subsection}[4em]{\vspace{0.1\baselineskip}\songti\zihao{-4}}{\thecontentslabel\ }{}
+{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+
+\begin{document}
+%---------------------------------------------------------------------
+%	封面设置
+%---------------------------------------------------------------------
+\begin{titlepage}
+    \begin{center}
+        
+    \includegraphics[width=0.60\textwidth]{nk_logo.pdf}\\
+    \vspace{10mm}
+    \hspace*{\fill} \\
+    \textbf{\zihao{1}{数据挖掘实验报告}}\\
+    \vspace{\fill}
+    
+\setlength{\extrarowheight}{3mm}
+{\songti\zihao{3}	
+\begin{tabular}{rl}
+    
+    {\makebox[4\ccwd][s]{学\qquad 号：}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{姓\qquad 名：}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{年\qquad 级：}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{学\qquad 院：}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{专\qquad 业：}} & ~\kaishu   \\
+    %{\makebox[4\ccwd][s]{授课教师：}}  & ~\kaishu xxx~教授\\ 
+    %{\makebox[4\ccwd][s]{课程助教：}} & ~\kaishu xxx~xxx \\
+    {\makebox[4\ccwd][s]{完成日期：}}  & ~\kaishu 2021年3月27日\\ 
+
+\end{tabular}
+ }\\[2cm]
+%\vspace{\fill}
+%\zihao{4}
+%使用\LaTeX 撰写于\today
+    \end{center}	
+\end{titlepage}
+
+%---------------------------------------------------------------------
+%  摘要页
+%---------------------------------------------------------------------
+
+
+%---------------------------------------------------------------------
+%  目录页
+%---------------------------------------------------------------------
+\tableofcontents % 生成目录
+
+%---------------------------------------------------------------------
+%  绪论
+%---------------------------------------------------------------------
+\chapter{第一次上机实验（LBP提取图像的纹理特征）}
+\section{实验要求}
+\begin{itemize}
+\item{1. 给定若干张图像，利用局部二值模式特征(LBP)对这些图像进行特征提取}
+\item{2. 图象是W * H * 3的矩阵}
+\item{3. 将最终提取到的特征通过plot的形式展示，绘制特征曲线图直观对比不同类图片纹理提取到的特征的不同}
+\item{4. 使用Python编程实现}
+\end{itemize}
+% \section{数据分析与处理}
+% \par 没有可以不写，比如垂直平分分类器中
+\section{实验步骤与原理}
+\subsection{LBP 特征的基本定义}
+局部二值模式（Local Binary Pattern, LBP）通过比较像素与其邻域像素的灰度关系，
+编码局部纹理的微结构。给定中心像素 $g_c$ 及以其为中心、
+半径为 $R$ 的圆形邻域上 $P$ 个等角度采样点的灰度 
+$\{g_p\}_{p=0}^{P-1}$，标准 LBP 的定义为
+\[
+\mathrm{LBP}_{P,R}(x_c,y_c)
+=\sum_{p=0}^{P-1} s(g_p-g_c)\,2^{p},\qquad
+s(t)=\begin{cases}
+1,& t\ge 0,\\
+0,& t<0,
+\end{cases}
+\]
+其中邻域采样点坐标为
+\[
+(x_p, y_p) = \bigl(x_c + R\cos(2\pi p/P),\; y_c - R\sin(2\pi p/P)\bigr),
+\]
+本次实验只考虑以$g_c$为中心的九宫格的局部的LBP特征。
+
+\subsection{直方图特征}
+将整幅图像（或图像块）内的 LBP 代码统计为直方图作为纹理特征：
+\[
+H[k]=\sum_{(x,y)} \mathbf{1}\{\mathrm{LBP}_{P,R}(x,y)=k\},\qquad k\in\{0,\dots,2^P-1\}.
+\]
+常见做法是对直方图进行 $\ell_1$ 归一化以消除尺寸影响：
+\[
+\hat H[k]=\frac{H[k]}{\sum_{j} H[j]}.
+\]
+为表征空间布局，可将图像划分为 $M\times N$ 个网格单元，分别计算直方图并按行优先串接，得到最终特征向量。
+
+
+\subsection{实现细节（本实验手写 Python 要点）}
+\begin{enumerate}
+  \item \textbf{预处理：} 彩色图像先转灰度；可选高斯平滑抑制噪声。
+  \item{按上述规则计算出图片的LBP特征直方图}
+  \item \textbf{可视化：} 使用 Matplotlib 绘制折线；多类对比时可叠加均值曲线与标准差带。
+\end{enumerate}
+
+\subsection{复杂度与并行优化}
+\begin{itemize}
+  \item{时间复杂度约为 $O(PWH)$，$W,H$ 为图像宽高；$P$ 通常较小，易于并行/向量化。}
+  \item{下面所呈现的代码采用串行方式计算LBP特征，但本人也给出了基于cython的并行加速版本。}
+\end{itemize}
+
+\noindent\textbf{加速计算技巧：}
+\begin{itemize}
+  \item{使用cython 的memoryview接口直接操作numpy.ndarray}
+  \item{在cython层开启python的nogil模式，绕开全局解释器锁，使用OpenMP实现并行计算}
+\end{itemize}
+
+并行计算代码及各类计算方法的benchmark详见
+
+\url{https://github.com/flyingbucket/machinelearning/tree/main/LBP}。
+\section{实验结果与分析}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/cloud_lbp_curves.png}
+    \caption{cloud LBP 特征曲线对比图}
+    \label{fig:cloud_lbp_curve}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/forest_lbp_curves.png}
+    \caption{forestLBP 特征曲线对比图}
+    \label{forest_lbp_curve}
+\end{figure}
+
+\section{实验代码}
+\begin{lstlisting}[language=Python]
+import numpy as np
+from matplotlib import pyplot as plt
+from collections import Counter
+from PIL import Image
+
+class LBP:
+    @staticmethod
+    def _read_img(imPath: str, pad: int = 1, mode: str = "reflect") -> np.ndarray:
+        im = Image.open(imPath).convert("L")
+        arr = np.array(im)
+        padded = np.pad(arr, pad_width=((pad, pad), (pad, pad)), mode=mode)
+        return padded
+
+    @staticmethod
+    def LBPkernel(im: np.ndarray, x, y) -> int:
+        h, w = im.shape
+        assert x + 2 < h and y + 2 < w, (
+            f"Index out of bound,please check padding. x:{x},y:{y},h:{h},w:{w}"
+        )
+        patch = im[x : x + 3, y : y + 3].copy()
+        patch = (patch >= patch[1, 1]).astype(np.uint8)
+        idxs = [0, 1, 2, 5, 8, 7, 6, 3]
+        bits = patch.reshape(-1)[idxs]
+        val = int("".join(map(str, bits)), 2)
+        return val
+
+def walk_dir(root_dir: str, out_dir: str = "EX1/outputs"):
+    root = Path(root_dir)
+    out = Path(out_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    LBPcyExecutor = LBP()
+
+    for class_dir in sorted([p for p in root.iterdir() if p.is_dir()]):
+        hist_list = []
+        img_names = []
+        all_codes = set()
+        for img_path in sorted(class_dir.iterdir()):
+            try:
+                res_dict = LBPcyExecutor(str(img_path))  # {code: count}
+                if not isinstance(res_dict, dict) or len(res_dict) == 0:
+                    print(f"[WARN] 空直方图：{img_path}")
+                    continue
+                hist_list.append(res_dict)
+                img_names.append(img_path.stem)
+                all_codes.update(res_dict.keys())
+            except Exception as e:
+                print(f"[WARN] 处理失败: {img_path} -> {e}")
+
+        codes = sorted(all_codes)  # 所有出现过的 LBP code
+        X = []  # 每张图对齐后的频率向量
+
+        for h in hist_list:
+            vec = np.array([h.get(c, 0) for c in codes], dtype=np.float64)
+            X.append(vec)
+
+        plt.figure(figsize=(10, 6))
+        for vec, name in zip(X, img_names):
+            plt.plot(codes, vec, linewidth=1.2, alpha=0.85, label=name)
+        plt.xlabel("LBP code")
+        plt.ylabel("count")
+        plt.title(f"LBP feature curves - {class_dir.name}")
+        plt.legend(ncol=2, fontsize=9, loc="best")
+        plt.tight_layout()
+
+        save_path = out / f"{class_dir.name}_lbp_curves.png"
+        plt.savefig(save_path, dpi=160)
+        plt.close()
+        print(f"[OK] Saved: {save_path}")
+
+if __name__ == "__main__":
+    dir = "./EX1/data"
+    walk_dir(dir)
+
+\end{lstlisting}
+\clearpage
+\chapter{第二次上机实验}
+\section{实验要求}
+\section{数据分析与处理}
+\section{实验步骤与原理}
+\section{实验结论与分析}
+\section{实验代码}
+\clearpage
+\chapter{第三次上机实验}
+\section{实验要求}
+\section{数据分析与处理}
+\section{实验步骤与原理}
+\section{实验结论与分析}
+\section{实验代码}
+\clearpage
+\chapter{第四次上机实验}
+\section{实验要求}
+\section{数据分析与处理}
+\section{实验步骤与原理}
+\section{实验结论与分析}
+\section{实验代码}
+\clearpage
+\chapter{第五次上机实验}
+\section{实验要求}
+\section{数据分析与处理}
+\section{实验步骤与原理}
+\section{实验结论与分析}
+\section{实验代码}
+\printbibliography
+
+\end{document}

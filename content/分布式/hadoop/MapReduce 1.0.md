@@ -3,10 +3,10 @@ MapReduce 是一种基于分治思想的分布式并行计算框架，它将大�
 
 MapReduce1.0包含四个组件：Client、JobTracker、TaskTracker、Task
 JobTracker进程会运行在master节点(一般是NameNode)上，TaskTracker会运行在slave节点(一般是DataNode)上。
- - Client：用户编写的MapReduce程序通过Client想JobTracker提交
+ - Client：用户编写的MapReduce程序通过Client向JobTracker提交
  - JobTracker：负责资源调度与作业调度
 	 - JobTracker通过内部的TaskScheduler对象调度集群的计算资源
-	 - JobTracker会监控所有TaskTracker和Job的健康状况，发现某个任务失败时，会将该人物转移到其他节点进行计算
+	 - JobTracker会监控所有TaskTracker和Job的健康状况，发现某个任务失败时，会将该任务转移到其他节点进行计算
 - TaskTracker： 
 	- 通过“心跳”机制向JobTracker汇报本节点的资源使用情况和任务完成情况
 	- 使用slot等量划分节点上的cpu和内存资源，为每个Task以slot为单位分配计算资源
