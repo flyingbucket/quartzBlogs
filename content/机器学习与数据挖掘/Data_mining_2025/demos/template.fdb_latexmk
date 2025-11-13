@@ -1,17 +1,18 @@
 # Fdb version 4
-["biber template"] 0 "template.bcf" "template.bbl" "template" 1762406794.25813 0
+["biber template"] 0 "template.bcf" "template.bbl" "template" 1763007539.99079 0
   "reference.bib" 0 -1 0 ""
   "template.bcf" 0 -1 0 "xelatex"
   (generated)
   "template.bbl"
   "template.blg"
   (rewritten before read)
-["xdvipdfmx"] 1762406793.15264 "template.xdv" "template.pdf" "template" 1762406794.26071 0
-  "template.xdv" 1762406792.80849 194828 6fdc40489420740eeafd9b9a17a139e3 "xelatex"
+["xdvipdfmx"] 1763007538.76374 "template.xdv" "template.pdf" "template" 1763007539.99353 0
+  "template.xdv" 1763007538.33554 241588 3d415a8bf6c3f2d8e3071bcd07b4d021 "xelatex"
   (generated)
   "template.pdf"
   (rewritten before read)
-["xelatex"] 1762406789.74169 "template.tex" "template.xdv" "template" 1762406794.25828 0
+["xelatex"] 1763007534.78025 "template.tex" "template.xdv" "template" 1763007539.99094 0
+  "../images/PR_curve.png" 1762998106.37368 22428 f892e68169e2c895b42a1913cdc6ea31 ""
   "../images/cloud_lbp_curves.png" 1762404959.38771 144986 673fbafb695522f280b55ea10243a1cf ""
   "../images/forest_lbp_curves.png" 1762404959.80471 133298 046d8e94d1144f51b0f633c85967177c ""
   "/home/flyingbucket/apps/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -156,12 +157,12 @@
   "/home/flyingbucket/apps/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1756487028 5897712 d6ef5338a733ebe98398f60aa422e7e4 ""
   "/home/flyingbucket/apps/texlive/2025/texmf.cnf" 1756486865.00552 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "nk_logo.pdf" 1576637488 143968 7898fc8116b788360f983c41d3d1e2c4 ""
-  "template.aux" 1762406792.80288 5143 6a9e44a6d0c01250dcc93d840cabe4b5 "xelatex"
+  "template.aux" 1763007538.32702 5728 3af05e5c722869ccf89d40298be586ef "xelatex"
   "template.bbl" 0 -1 0 "biber template"
-  "template.out" 1762406792.80511 4315 d66092cf513cabc6419978b6855fe313 "xelatex"
-  "template.run.xml" 1762406792.80849 2478 2980c0721a960ecbaa9255087797c26f "xelatex"
-  "template.tex" 1762406788.60614 14081 3ca4b0273a635510d140ee5ff776dd90 ""
-  "template.toc" 1762406792.80849 2701 48ac6158f049a0625fa3d938991756c2 "xelatex"
+  "template.out" 1763007538.32902 4693 f87b634cee9d898e7ea20c8e40a2a7ca "xelatex"
+  "template.run.xml" 1763007538.33554 2478 2980c0721a960ecbaa9255087797c26f "xelatex"
+  "template.tex" 1763007533.13305 18305 c9e68f9186791b356d74d86d93a9cec2 ""
+  "template.toc" 1763007538.33554 2951 524af78b2e8846ef78108999c4837fa3 "xelatex"
   (generated)
   "template.aux"
   "template.bcf"

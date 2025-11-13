@@ -271,87 +271,186 @@ H[k]=\sum_{(x,y)} \mathbf{1}\{\mathrm{LBP}_{P,R}(x,y)=k\},\qquad k\in\{0,\dots,2
 
 \section{实验代码}
 \begin{lstlisting}[language=Python]
-import numpy as np
-from matplotlib import pyplot as plt
-from collections import Counter
-from PIL import Image
+  import numpy as np
+  from matplotlib import pyplot as plt
+  from collections import Counter
+  from PIL import Image
 
-class LBP:
-    @staticmethod
-    def _read_img(imPath: str, pad: int = 1, mode: str = "reflect") -> np.ndarray:
-        im = Image.open(imPath).convert("L")
-        arr = np.array(im)
-        padded = np.pad(arr, pad_width=((pad, pad), (pad, pad)), mode=mode)
-        return padded
+  class LBP:
+      @staticmethod
+      def _read_img(imPath: str, pad: int = 1, mode: str = "reflect") -> np.ndarray:
+          im = Image.open(imPath).convert("L")
+          arr = np.array(im)
+          padded = np.pad(arr, pad_width=((pad, pad), (pad, pad)), mode=mode)
+          return padded
 
-    @staticmethod
-    def LBPkernel(im: np.ndarray, x, y) -> int:
-        h, w = im.shape
-        assert x + 2 < h and y + 2 < w, (
-            f"Index out of bound,please check padding. x:{x},y:{y},h:{h},w:{w}"
-        )
-        patch = im[x : x + 3, y : y + 3].copy()
-        patch = (patch >= patch[1, 1]).astype(np.uint8)
-        idxs = [0, 1, 2, 5, 8, 7, 6, 3]
-        bits = patch.reshape(-1)[idxs]
-        val = int("".join(map(str, bits)), 2)
-        return val
+      @staticmethod
+      def LBPkernel(im: np.ndarray, x, y) -> int:
+          h, w = im.shape
+          assert x + 2 < h and y + 2 < w, (
+              f"Index out of bound,please check padding. x:{x},y:{y},h:{h},w:{w}"
+          )
+          patch = im[x : x + 3, y : y + 3].copy()
+          patch = (patch >= patch[1, 1]).astype(np.uint8)
+          idxs = [0, 1, 2, 5, 8, 7, 6, 3]
+          bits = patch.reshape(-1)[idxs]
+          val = int("".join(map(str, bits)), 2)
+          return val
 
-def walk_dir(root_dir: str, out_dir: str = "EX1/outputs"):
-    root = Path(root_dir)
-    out = Path(out_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    LBPcyExecutor = LBP()
+  def walk_dir(root_dir: str, out_dir: str = "EX1/outputs"):
+      root = Path(root_dir)
+      out = Path(out_dir)
+      out.mkdir(parents=True, exist_ok=True)
+      LBPcyExecutor = LBP()
 
-    for class_dir in sorted([p for p in root.iterdir() if p.is_dir()]):
-        hist_list = []
-        img_names = []
-        all_codes = set()
-        for img_path in sorted(class_dir.iterdir()):
-            try:
-                res_dict = LBPcyExecutor(str(img_path))  # {code: count}
-                if not isinstance(res_dict, dict) or len(res_dict) == 0:
-                    print(f"[WARN] 空直方图：{img_path}")
-                    continue
-                hist_list.append(res_dict)
-                img_names.append(img_path.stem)
-                all_codes.update(res_dict.keys())
-            except Exception as e:
-                print(f"[WARN] 处理失败: {img_path} -> {e}")
+      for class_dir in sorted([p for p in root.iterdir() if p.is_dir()]):
+          hist_list = []
+          img_names = []
+          all_codes = set()
+          for img_path in sorted(class_dir.iterdir()):
+              try:
+                  res_dict = LBPcyExecutor(str(img_path))  # {code: count}
+                  if not isinstance(res_dict, dict) or len(res_dict) == 0:
+                      print(f"[WARN] 空直方图：{img_path}")
+                      continue
+                  hist_list.append(res_dict)
+                  img_names.append(img_path.stem)
+                  all_codes.update(res_dict.keys())
+              except Exception as e:
+                  print(f"[WARN] 处理失败: {img_path} -> {e}")
 
-        codes = sorted(all_codes)  # 所有出现过的 LBP code
-        X = []  # 每张图对齐后的频率向量
+          codes = sorted(all_codes)  # 所有出现过的 LBP code
+          X = []  # 每张图对齐后的频率向量
 
-        for h in hist_list:
-            vec = np.array([h.get(c, 0) for c in codes], dtype=np.float64)
-            X.append(vec)
+          for h in hist_list:
+              vec = np.array([h.get(c, 0) for c in codes], dtype=np.float64)
+              X.append(vec)
 
-        plt.figure(figsize=(10, 6))
-        for vec, name in zip(X, img_names):
-            plt.plot(codes, vec, linewidth=1.2, alpha=0.85, label=name)
-        plt.xlabel("LBP code")
-        plt.ylabel("count")
-        plt.title(f"LBP feature curves - {class_dir.name}")
-        plt.legend(ncol=2, fontsize=9, loc="best")
-        plt.tight_layout()
+          plt.figure(figsize=(10, 6))
+          for vec, name in zip(X, img_names):
+              plt.plot(codes, vec, linewidth=1.2, alpha=0.85, label=name)
+          plt.xlabel("LBP code")
+          plt.ylabel("count")
+          plt.title(f"LBP feature curves - {class_dir.name}")
+          plt.legend(ncol=2, fontsize=9, loc="best")
+          plt.tight_layout()
 
-        save_path = out / f"{class_dir.name}_lbp_curves.png"
-        plt.savefig(save_path, dpi=160)
-        plt.close()
-        print(f"[OK] Saved: {save_path}")
+          save_path = out / f"{class_dir.name}_lbp_curves.png"
+          plt.savefig(save_path, dpi=160)
+          plt.close()
+          print(f"[OK] Saved: {save_path}")
 
-if __name__ == "__main__":
-    dir = "./EX1/data"
-    walk_dir(dir)
+  if __name__ == "__main__":
+      dir = "./EX1/data"
+      walk_dir(dir)
 
 \end{lstlisting}
 \clearpage
 \chapter{第二次上机实验}
 \section{实验要求}
+\begin{itemize}
+  \item 1. 根据分类结果（result.csv）绘制PR曲线
+  \item 2. 使用Python编程实现
+\end{itemize}
 \section{数据分析与处理}
+
+\textbf{数据分析}
+
+数据给出了分类器在测试集上的推理结果，包含两列，lable和pred
+
+\textbf{数据处理}
+
+将数据按照预测值递减排序
 \section{实验步骤与原理}
+
+\subsection{原理说明}
+
+在二分类任务中，分类器的输出通常为一个介于 $[0,1]$ 之间的预测概率或置信度分数。通过设定不同的阈值（Threshold），可以将样本划分为正类或负类，从而得到不同的分类结果。
+
+针对每一个阈值 $\theta$，可计算以下指标：
+\begin{itemize}
+  \item \textbf{真正例（TP）}：预测为正类且实际为正类的样本数；
+  \item \textbf{假正例（FP）}：预测为正类但实际为负类的样本数；
+  \item \textbf{假负例（FN）}：预测为负类但实际为正类的样本数；
+  \item \textbf{真负例（TN）}：预测为负类且实际为负类的样本数。
+\end{itemize}
+
+由此可计算两个关键性能指标：
+\[
+\text{Precision} = \frac{TP}{TP + FP}, \qquad
+\text{Recall} = \frac{TP}{TP + FN}
+\]
+
+当阈值从 1 逐渐减小到 0 时，Recall 通常单调递增，而 Precision 可能上升或下降。将各个阈值对应的 $(\text{Recall}, \text{Precision})$ 点连接起来，即得到 \textbf{Precision–Recall (PR) 曲线}。
+
+PR 曲线反映了模型在不同阈值下的精确率与召回率的权衡关系，常用于评估类别分布不平衡的分类任务。曲线下的面积（AUC-PR）越大，说明模型整体性能越优。
+
+\subsection{实验步骤}
+
+\begin{enumerate}
+  \item \textbf{数据读取与排序}：使用 \texttt{pandas} 读取 \texttt{result.csv} 文件，并按照预测值 \texttt{pred} 从大到小排序；
+  \item \textbf{计算累计统计量}：
+    \begin{itemize}
+      \item 通过布尔判断 \texttt{(label == 1)} 计算真正例的累计和（\texttt{tp\_cumsum}）；
+      \item 通过 \texttt{(label == 0)} 计算假正例的累计和（\texttt{fp\_cumsum}）；
+    \end{itemize}
+  \item \textbf{计算 Precision 与 Recall}：
+    \[
+    \text{Precision}_i = \frac{\text{TP}_i}{\text{TP}_i + \text{FP}_i}, \qquad
+    \text{Recall}_i = \frac{\text{TP}_i}{\text{TotalPos}}
+    \]
+    其中 \texttt{TotalPos} 为真实正样本总数。
+  \item \textbf{绘制 PR 曲线}：
+    使用 \texttt{matplotlib} 将 Recall 作为横轴，Precision 作为纵轴，绘制曲线图；
+  \item \textbf{性能评估（可选）}：
+    计算 PR 曲线下的面积（AUC–PR），作为模型整体性能指标。
+\end{enumerate}
+
+\subsection{实验意义}
+
+通过本实验，掌握了从分类结果计算 Precision–Recall 曲线的完整流程，理解了模型阈值调整对分类性能的影响，并熟悉了使用 Python 对实验结果进行可视化的基本方法。
+
 \section{实验结论与分析}
+根据给出的示例数据绘制出的PR曲线如图\ref{fig:PRcurve}所示：
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{../images/PR_curve.png}
+    \caption{示例数据的PR曲线}
+    \label{fig:PRcurve}
+\end{figure}
 \section{实验代码}
+\begin{lstlisting}[language=Python]
+  import pandas as pd
+  import numpy as np
+  from matplotlib import pyplot as plt
+
+  data = pd.read_csv("./EX2/data/result.csv").sort_values(by="pred",ascending=False).reset_index(drop=True)
+
+  data["tp_cumsum"] = (data["label"] == 1).cumsum()
+  data["fp_cumsum"] = (data["label"] == 0).cumsum()
+
+  total_pos = (data["label"] == 1).sum()
+
+  data["precision"] = data["tp_cumsum"] / (data["tp_cumsum"] + data["fp_cumsum"])
+  data["recall"] = data["tp_cumsum"] / total_pos
+
+  recall = np.r_[0.0, data["recall"].to_numpy()]
+  precision = np.r_[1.0, data["precision"].to_numpy()]
+
+# 计算 AUPR（recall 单调增时可用梯形法则）
+  aupr = np.trapz(precision, recall)
+
+  plt.figure()
+  plt.step(recall, precision, where="post")
+  plt.xlabel("Recall")
+  plt.ylabel("Precision")
+  plt.title(f"Precision–Recall Curve (AUPR = {aupr:.4f})")
+  plt.xlim(0, 1)
+  plt.ylim(0, 1)
+  plt.grid(True)
+  plt.savefig("./EX2/PR_curve.png")
+  plt.show()
+\end{lstlisting}
 \clearpage
 \chapter{第三次上机实验}
 \section{实验要求}
