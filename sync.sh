@@ -11,4 +11,5 @@ rsync -av --delete \
   --exclude '.gitignore' \
   --exclude '.vscode' \
   --exclude '.html' \
+  --exclude 'README.md' \
   $VAULTS/* $DEST/
