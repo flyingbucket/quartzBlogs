@@ -1,17 +1,16 @@
 # Fdb version 4
-["biber template"] 0 "template.bcf" "template.bbl" "template" 1763612749.21212 0
-  "reference.bib" 0 -1 0 ""
-  "template.bcf" 0 -1 0 "xelatex"
+["biber template"] 1766508069.33534 "template.bcf" "template.bbl" "template" 1766580196.7044 2
+  "template.bcf" 1766580194.60614 137301 3e42027532dcebe5da296379c7b262ca "xelatex"
   (generated)
   "template.bbl"
   "template.blg"
   (rewritten before read)
-["xdvipdfmx"] 1763612747.80663 "template.xdv" "template.pdf" "template" 1763612749.21563 0
-  "template.xdv" 1763612747.42077 344520 3183e5347d0fb645769cd38205a4be84 "xelatex"
+["xdvipdfmx"] 1766580195.15201 "template.xdv" "template.pdf" "template" 1766580196.70812 0
+  "template.xdv" 1766580194.61018 578244 273ff6861421754e0b39732d9624a61a "xelatex"
   (generated)
   "template.pdf"
   (rewritten before read)
-["xelatex"] 1763612743.58303 "template.tex" "template.xdv" "template" 1763612749.21232 0
+["xelatex"] 1766580189.44652 "template.tex" "template.xdv" "template" 1766580196.70454 0
   "../images/PR_curve.png" 1762998106.37368 22428 f892e68169e2c895b42a1913cdc6ea31 ""
   "../images/cloud_lbp_curves.png" 1762404959.38771 144986 673fbafb695522f280b55ea10243a1cf ""
   "../images/forest_lbp_curves.png" 1762404959.80471 133298 046d8e94d1144f51b0f633c85967177c ""
@@ -157,12 +156,12 @@
   "/home/flyingbucket/apps/texlive/2025/texmf-var/web2c/xetex/xelatex.fmt" 1756487028 5897712 d6ef5338a733ebe98398f60aa422e7e4 ""
   "/home/flyingbucket/apps/texlive/2025/texmf.cnf" 1756486865.00552 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "nk_logo.pdf" 1576637488 143968 7898fc8116b788360f983c41d3d1e2c4 ""
-  "template.aux" 1763612747.41373 6233 1a7f19dd2edba283b314ba2344c38586 "xelatex"
+  "template.aux" 1766580194.59814 8580 d97f1ff4345392a6c3c104edcccc2db1 "xelatex"
   "template.bbl" 0 -1 0 "biber template"
-  "template.out" 1763612747.41573 5221 79e2c21adab9275afcf57dd517a44c8f "xelatex"
-  "template.run.xml" 1763612747.42077 2478 2980c0721a960ecbaa9255087797c26f "xelatex"
-  "template.tex" 1763612738.02872 26618 85df3497ce4ce246a61bf1b8efb1a8af ""
-  "template.toc" 1763612747.42077 3292 2310ea424540e3b622d6f62ec1fe65ef "xelatex"
+  "template.out" 1766580194.60214 7205 e45eaeaaa3298b3c52f39fe9e8c8a752 "xelatex"
+  "template.run.xml" 1766580194.61018 2478 2980c0721a960ecbaa9255087797c26f "xelatex"
+  "template.tex" 1766580188.52513 44727 d9f5b4f4585aaeb87d34ce30429ae493 ""
+  "template.toc" 1766580194.61018 4860 661bae71531f15aac712d928f3485d0d "xelatex"
   (generated)
   "template.aux"
   "template.bcf"

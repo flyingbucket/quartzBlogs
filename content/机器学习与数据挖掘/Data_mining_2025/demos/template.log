@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.30)  20 NOV 2025 12:25
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.8.30)  24 DEC 2025 20:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1168,8 +1168,8 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 161.
  (/home/flyingbucket/apps/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Overfull \hbox (8.03pt too wide) detected at line 163
-\TU/FandolSong-Regular(1)/m/n/16.06 学 号：| 
+Overfull \hbox (59.63077pt too wide) detected at line 163
+\TU/FandolSong-Regular(1)/m/n/16.06 学 号：| \TU/lmr/m/n/16.06 2311067
  []
 
 
@@ -1192,23 +1192,23 @@ Package fontspec Info:
 (fontspec)             <->"[FandolKai-Regular.otf]/OT:script=hani;language=dflt;"
 
 
-Overfull \hbox (8.03pt too wide) detected at line 164
-\TU/FandolSong-Regular(1)/m/n/16.06 姓 名：| 
+Overfull \hbox (56.20999pt too wide) detected at line 164
+\TU/FandolSong-Regular(1)/m/n/16.06 姓 名：|  李 孟 霖
  []
 
 
-Overfull \hbox (8.03pt too wide) detected at line 165
-\TU/FandolSong-Regular(1)/m/n/16.06 年 级：| 
+Overfull \hbox (88.92957pt too wide) detected at line 165
+\TU/FandolSong-Regular(1)/m/n/16.06 年 级：| \TU/lmr/m/n/16.06 2023 \TU/FandolSong-Regular(1)/m/n/16.06 级 大 三
  []
 
 
-Overfull \hbox (8.03pt too wide) detected at line 166
-\TU/FandolSong-Regular(1)/m/n/16.06 学 院：| 
+Overfull \hbox (152.56998pt too wide) detected at line 166
+\TU/FandolSong-Regular(1)/m/n/16.06 学 院：|  统 计 与 数 据 科 学 学 院
  []
 
 
-Overfull \hbox (8.03pt too wide) detected at line 167
-\TU/FandolSong-Regular(1)/m/n/16.06 专 业：| 
+Overfull \hbox (200.74997pt too wide) detected at line 167
+\TU/FandolSong-Regular(1)/m/n/16.06 专 业：|  数 据 科 学 与 大 数 据 技 术 专 业
  []
 
 
@@ -1469,6 +1469,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [19]
 Chapter 4.
 
+Overfull \hbox (5.3681pt too wide) in paragraph at lines 703--708
+[]\TU/FandolSong-Regular(0)/m/n/12 在 数 据 预 处 理 阶 段，|  首 先 加 载 了 训 练 集 和 测 试 集 数 据。|  数 据 包 含 \TU/lmr/m/n/12 5 \TU/FandolSong-Regular(0)/m/n/12 个 属 性：| |“\TU/lmr/m/n/12 Dates\TU/FandolSong-Regular(0)/m/n/12 ” （日
+ []
+
+
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -1481,9 +1486,130 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[21]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[22]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[23]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[24]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[25]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[26]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27]
 Chapter 5.
 
-LaTeX Warning: Empty bibliography on input line 702.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[28
+
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[29]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[30]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[31]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[32]
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[33]
+
+LaTeX Warning: Empty bibliography on input line 1156.
 
 
 
@@ -1494,27 +1620,24 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[21
-
-
-] (./template.aux)
+[34] (./template.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `template.out' has not changed.
-(rerunfilecheck)             Checksum: 79E2C21ADAB9275AFCF57DD517A44C8F;5221.
+(rerunfilecheck)             Checksum: E45EAEAAA3298B3C52F39FE9E8C8A752;7205.
 Package logreq Info: Writing requests to 'template.run.xml'.
 \openout1 = `template.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27010 strings out of 468441
- 563512 string characters out of 5439576
+ 27192 strings out of 468441
+ 572070 string characters out of 5439576
  1787162 words of memory out of 5000000
- 55059 multiletter control sequences out of 15000+600000
- 640135 words of font info for 145 fonts, out of 8000000 for 9000
+ 55239 multiletter control sequences out of 15000+600000
+ 640151 words of font info for 147 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  93i,12n,118p,697b,1307s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on template.xdv (22 pages, 344520 bytes).
+Output written on template.xdv (35 pages, 578244 bytes).

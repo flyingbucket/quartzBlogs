@@ -160,14 +160,14 @@
 {\songti\zihao{3}	
 \begin{tabular}{rl}
     
-    {\makebox[4\ccwd][s]{学\qquad 号：}} & ~\kaishu   \\
-    {\makebox[4\ccwd][s]{姓\qquad 名：}} & ~\kaishu   \\
-    {\makebox[4\ccwd][s]{年\qquad 级：}} & ~\kaishu   \\
-    {\makebox[4\ccwd][s]{学\qquad 院：}} & ~\kaishu   \\
-    {\makebox[4\ccwd][s]{专\qquad 业：}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{学\qquad 号：2311067}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{姓\qquad 名：李孟霖}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{年\qquad 级：2023级大三}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{学\qquad 院：统计与数据科学学院}} & ~\kaishu   \\
+    {\makebox[4\ccwd][s]{专\qquad 业：数据科学与大数据技术专业}} & ~\kaishu   \\
     %{\makebox[4\ccwd][s]{授课教师：}}  & ~\kaishu xxx~教授\\ 
     %{\makebox[4\ccwd][s]{课程助教：}} & ~\kaishu xxx~xxx \\
-    {\makebox[4\ccwd][s]{完成日期：}}  & ~\kaishu 2021年3月27日\\ 
+    {\makebox[4\ccwd][s]{完成日期：}}  & ~\kaishu 2025年12月23日\\ 
 
 \end{tabular}
  }\\[2cm]
@@ -454,9 +454,10 @@ PR 曲线反映了模型在不同阈值下的精确率与召回率的权衡关�
 \clearpage
 \chapter{第三次上机实验}
 \section{实验要求}
-
 1. 使用给定sklearn库中内置乳腺癌数据集，学习得到一个Fisher分类器
+
 2. 对测试样本进行分类
+
 3. 使用Python编程实现
 
 \section{数据分析与处理}
@@ -688,17 +689,470 @@ if __name__ == "__main__":
 \clearpage
 \chapter{第四次上机实验}
 \section{实验要求}
+基于朴素贝叶斯的犯罪类型预测
+
+1. 给定LA犯罪数据集：train.csv，test.csv 共44948个训练样本，14983个测试样本
+
+2. 根据某案件的“案发时间”“所属警区”“案发地点”等属性，预测案件的类型，例如“抢劫”“偷窃”“杀人”等。
+
+3. 属性均为离散的
+
+4. 使用Python编程实现，完成基于朴素贝叶斯的对犯罪类型的预测
+
 \section{数据分析与处理}
+在数据预处理阶段，首先加载了训练集和测试集数据。
+数据包含5个属性：
+“Dates”（日期）、“Category”（犯罪类型）、“Descript”（描述）、
+“DayOfWeek”（星期几）、“PdDistrict”（警区）。
+接下来，将对这些属性进行适当的处理，确保数据适用于朴素贝叶斯分类器。
+
 \section{实验步骤与原理}
+
+\subsection{贝叶斯分类器原理}
+贝叶斯分类器基于贝叶斯定理，后验概率由先验概率和类条件概率密度计算得出。对于二分类问题，贝叶斯公式为：
+\[
+P(\theta|X) = \frac{P(X|\theta) P(\theta)}{P(X)}
+\]
+其中$P(\theta)$为先验，$P(\theta|X)$为后验。我们的目标是通过最大化后验概率来进行分类。
+
+\subsection{分类规则}
+在二分类问题中，我们使用后验概率进行决策：
+\[
+P(\omega_1|X) > P(\omega_2|X) \quad \Rightarrow \quad \text{选择} \ \omega_1
+\]
+条件错误概率为：
+\[
+P(\text{error} \mid x, \text{decide} \ \omega_1) = P(\omega_2 \mid x)
+\]
+根据错误概率最小化原则，选择后验概率大的类别进行分类。
+
+\subsection{朴素贝叶斯分类器}
+朴素贝叶斯分类器是一种基于贝叶斯定理的分类方法，假设特征条件独立。在多分类问题中，对于每个类别$C_i$，朴素贝叶斯分类器通过以下公式计算后验概率：
+\[
+P(C_i | X) = \frac{P(X | C_i) P(C_i)}{P(X)}
+\]
+由于特征条件独立，$P(X | C_i)$可以分解为各个特征条件概率的乘积：
+\[
+P(X | C_i) = \prod_{j=1}^{n} P(x_j | C_i)
+\]
+因此，朴素贝叶斯分类器的决策规则是选择使后验概率最大的类别：
+\[
+\hat{C}(X) = \arg \max_{C_i} P(X | C_i) P(C_i)
+\]
+
+\subsection{实验中的朴素贝叶斯方法}
+本实验使用的犯罪数据集中的特征（如案发时间、警区等）均为离散型数据，这与传统的连续型数据不同。在这种情况下，朴素贝叶斯分类器的特征条件概率$P(x_j | C_i)$是通过每个特征值在各类别中的频率来估计的，即：
+\[
+P(x_j | C_i) = \frac{\text{count}(x_j, C_i)}{\text{count}(C_i)}
+\]
+其中$\text{count}(x_j, C_i)$表示类别$C_i$中出现特征值$x_j$的次数，而$\text{count}(C_i)$是类别$C_i$中样本的总数。
+
+因此，本实验中朴素贝叶斯的实现利用了训练数据集的频率信息来计算每个特征在各类别下的条件概率，并使用这些条件概率来预测测试集中的犯罪类型。
+
 \section{实验结论与分析}
+
+在本实验中，我们使用朴素贝叶斯分类器对犯罪数据集进行了分类，结果如下：
+
+\subsection{评估指标}
+模型在测试集上的评估结果如下：
+\begin{itemize}
+    \item 准确率 (Accuracy): 0.9997
+    \item 精确度 (Precision, macro): 0.9978
+    \item 召回率 (Recall, macro): 0.9972
+    \item F1-得分 (F1-score, macro): 0.9975
+\end{itemize}
+
+这些评估指标表明，模型在测试集上表现非常好，准确率接近1，且精确度、召回率和F1得分都非常高，表明模型在分类时能够有效地平衡假阳性和假阴性。
+
+\subsection{混淆矩阵}
+混淆矩阵如下所示：
+\[
+\begin{bmatrix}
+13600 & 1 & 2 & 0 \\
+0 & 948 & 0 & 0 \\
+1 & 0 & 297 & 0 \\
+0 & 1 & 0 & 133 \\
+\end{bmatrix}
+\]
+
+从混淆矩阵可以看出，模型在大多数类别中正确分类了样本。具体分析如下：
+\begin{itemize}
+    \item 类别 1 中有13600个样本被正确分类，仅有少数几个误分类为类别 2 和 3。
+    \item 类别 2 和类别 3 的分类效果也非常好，误分类的样本数量极少。
+    \item 类别 4 的分类效果稍差，但仍然具有较高的准确率，只有少数样本被误分类为类别 2。
+\end{itemize}
+
+\subsection{分析与讨论}
+从实验结果来看，朴素贝叶斯分类器在本次犯罪预测任务中表现出色。特别是针对离散型特征数据，模型能够很好地捕捉不同类别之间的关系并做出准确的预测。然而，虽然总体表现很好，但我们仍然注意到在类别 4 上存在一些误分类现象，未来可以通过更复杂的特征工程或尝试其他分类算法来进一步提高模型的表现。
 \section{实验代码}
+\begin{lstlisting}[language=Python]
+import csv
+from collections import defaultdict
+import math
+
+from sklearn.metrics import (
+    accuracy_score,
+    precision_recall_fscore_support,
+    confusion_matrix,
+)
+
+
+class DiscreteNB:
+    def __init__(self, alpha=1.0):
+        self.alpha = alpha  # 平滑参数
+        self.class_prior = {}  # P(y)
+        self.feature_cond_prob = {}  # P(x_i=v | y)
+        self.label_encoders = {}  # 文本特征映射表
+        self.classes = []
+        self.feature_values = {}  # 每个特征可能出现的取值
+
+    # 文本离散特征编码器
+    def fit_label_encoders(self, X):
+        # X: list of samples, each is a list of string features
+        n_features = len(X[0])
+        for i in range(n_features):
+            self.label_encoders[i] = {}
+            self.feature_values[i] = set()
+
+        for x in X:
+            for i, v in enumerate(x):
+                if v not in self.label_encoders[i]:
+                    self.label_encoders[i][v] = len(self.label_encoders[i])
+                self.feature_values[i].add(v)
+        for i in range(n_features):
+            self.label_encoders[i]["__UNK__"] = -1
+
+    def encode(self, X):
+        X_enc = []
+        for x in X:
+            row = []
+            for i, v in enumerate(x):
+                row.append(self.label_encoders[i][v])
+            X_enc.append(row)
+        return X_enc
+
+    def fit(self, X, y):
+        # 拟合文本编码器
+        self.fit_label_encoders(X)
+        X = self.encode(X)
+
+        self.classes = list(set(y))
+        n_samples = len(X)
+        n_features = len(X[0])
+
+        # 类别计数
+        class_count = defaultdict(int)
+        # 每个类别、每个特征维度、每个可能取值的计数
+        feature_count = defaultdict(
+            lambda: [defaultdict(int) for _ in range(n_features)]
+        )
+
+        # 统计频数
+        for x_row, label in zip(X, y):
+            class_count[label] += 1
+            for i, v in enumerate(x_row):
+                feature_count[label][i][v] += 1
+
+        # 计算先验 P(y)
+        for c in self.classes:
+            self.class_prior[c] = (class_count[c] + self.alpha) / (
+                n_samples + self.alpha * len(self.classes)
+            )
+
+        # 计算条件概率 P(x_i=v | y)
+        self.feature_cond_prob = defaultdict(list)
+        for c in self.classes:
+            for i in range(n_features):
+                cond = {}
+                total_count = sum(feature_count[c][i].values())
+                V = len(self.feature_values[i])
+                for v_enc in feature_count[c][i]:
+                    cond[v_enc] = (feature_count[c][i][v_enc] + self.alpha) / (
+                        total_count + self.alpha * V
+                    )
+                # 对未出现的取值做平滑
+                for txt_val, v_enc in self.label_encoders[i].items():
+                    if v_enc not in cond:
+                        cond[v_enc] = self.alpha / (total_count + self.alpha * V)
+                self.feature_cond_prob[c].append(cond)
+
+    # 预测单条
+    def predict_one(self, x):
+        # 文本转编码
+        x = [
+            self.label_encoders[i].get(v, -1)  # 未见过的特征值 → -1
+            for i, v in enumerate(x)
+        ]
+        best_class = None
+        best_logp = -1e18
+
+        for c in self.classes:
+            logp = math.log(self.class_prior[c])
+            for i, v_enc in enumerate(x):
+                logp += math.log(self.feature_cond_prob[c][i][v_enc])
+            if logp > best_logp:
+                best_logp = logp
+                best_class = c
+
+        return best_class
+
+    # 批量预测
+    def predict(self, X):
+        return [self.predict_one(x) for x in X]
+
+
+# 数据加载
+def load_data(path):
+    X = []
+    y = []
+    with open(path, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            # 选择部分离散特征
+            # 你可按需要修改
+            feature_row = [
+                row["DayOfWeek"],
+                row["PdDistrict"],
+                row["Descript"],
+            ]
+            X.append(feature_row)
+            y.append(row["Category"])
+    return X, y
+
+
+# 评估
+def evaluate(y_true, y_pred):
+    print("====== Evaluation ======")
+
+    acc = accuracy_score(y_true, y_pred)
+    print(f"Accuracy: {acc:.4f}")
+
+    # precision, recall, f1 for each class (macro means均值)
+    precision, recall, f1, support = precision_recall_fscore_support(
+        y_true, y_pred, average="macro", zero_division=0
+    )
+
+    print(f"Precision (macro): {precision:.4f}")
+    print(f"Recall (macro):    {recall:.4f}")
+    print(f"F1-score (macro):  {f1:.4f}")
+
+    print("\nConfusion Matrix:")
+    cm = confusion_matrix(y_true, y_pred)
+    print(cm)
+
+
+if __name__ == "__main__":
+    X_train, y_train = load_data("./EX4/data/train.csv")
+    X_test, y_test = load_data("./EX4/data/test.csv")
+
+    nb = DiscreteNB(alpha=1.0)
+    nb.fit(X_train, y_train)
+    y_pred = nb.predict(X_test)
+
+    evaluate(y_test, y_pred)
+\end{lstlisting}
 \clearpage
 \chapter{第五次上机实验}
 \section{实验要求}
+实验五、基于决策树的犯罪类型预测
+
+1. 给定LA犯罪数据集：train.csv，test.csv 共44948个训练样本，14983个测试样本
+
+2. 根据某案件的“案发时间”“所属警区”“案发地点”等属性，预测案件的类型，例如“抢劫”“偷窃”“杀人”等。
+
+3. 属性均为离散的
+
+4. 使用决策树方法进行犯罪类型预测，Python编程实现，可以直接调包
+
+5. 看懂代码，找到前3个进行分支的属性
+
 \section{数据分析与处理}
+数据仍为洛杉矶犯罪数据，与实验四相同。
+
 \section{实验步骤与原理}
+
+\subsection{决策树原理}
+决策树是一类基于树结构的监督学习模型，广泛应用于分类和回归任务。在分类问题中，决策树通过一系列条件划分（if–else规则）将样本逐步划分到不同的叶节点，并在叶节点给出分类结果。每个内部节点表示特征空间中的一个维度，叶节点则对应最终的分类标签。决策树的目标是通过不断选择最佳特征对样本进行划分，最终形成一颗能够有效分类的新样本的树。
+
+\subsection{Hunt算法}
+Hunt算法是生成决策树的通用框架。它通过以下规则决定一个节点是否为叶子节点，或是否需要继续分裂为内部节点：
+
+- \textbf{叶子节点}：
+  \begin{itemize}
+      \item 当前节点下所有数据标签相同（样本纯），则该节点为叶子节点，输出标签为这些样本的标签。
+      \item 当前节点下样本标签不同（样本非纯），但样本不可再分裂时，该节点为叶子节点，输出标签为该节点中多数样本的标签：
+      \begin{itemize}
+          \item 所有特征在当前路径上已被使用过。
+          \item 当前节点的所有样本在所有特征上取值完全相同。
+          \item 样本数量小于预设的最小分裂样本数。
+          \item 所有特征的划分信息增益为0。
+      \end{itemize}
+  \end{itemize}
+- \textbf{内部节点}：若样本标签不同，且样本数大于最小分裂样本数，且存在具有信息增益的可用特征，则选择信息增益最大的特征，并找到该特征的最佳划分点，继续向下分裂。
+
+\subsection{节点分裂规则}
+在决策树的节点分裂过程中，首先需要确定如何量化每个节点的纯度。常用的指标包括熵和信息增益。
+
+\subsubsection{熵}
+熵用于衡量一个随机变量的不确定性。对于离散型随机变量$X$，其熵定义为：
+\[
+H(X) = -\sum_{i=1}^k P(X=k) \log P(X=k)
+\]
+对于连续型随机变量$X$，熵的定义为：
+\[
+H(X) = -\int f_X(x) \log f_X(x) dx
+\]
+其中$P(X=k)$是$X$取值为$k$的概率，$f_X(x)$是$X$的概率密度函数。
+
+\subsubsection{节点样本纯度}
+节点样本标签的熵用于衡量该节点的纯度。样本纯度越高，熵越低。我们通常使用熵来定义不纯度：
+\[
+H(D) = -\sum_{i=1}^m P(X=k) \log P(X=k)
+\]
+其中$D$是一个节点中的样本集合，$m$是样本类别数。
+
+\subsubsection{信息增益}
+信息增益衡量的是通过特征$X$划分数据集$D$后，样本集的不确定性（熵）的减少程度。设$D_1, D_2, \dots, D_k$为划分后的子节点，$|D|$为样本集合$D$的大小，则划分后的加权平均熵为：
+\[
+H(D|X) = \sum_{i=1}^k \frac{|D_i|}{|D|} H(D_i)
+\]
+信息增益定义为：
+\[
+\text{Gain}(D, X) = H(D) - H(D|X)
+\]
+信息增益越大，说明通过特征$X$进行划分能够有效减少节点的熵，从而提高分类效果。
+
+\subsection{实验中的决策树使用方法}
+在本实验中，我们使用决策树算法对犯罪数据进行分类。数据集中的特征均为离散型，因此我们通过计算每个特征的信息增益，选择信息增益最大的特征进行划分。具体步骤包括：
+\begin{itemize}
+    \item 计算每个特征的熵和信息增益。
+    \item 选择信息增益最大的特征作为当前节点的划分依据。
+    \item 对每个子节点递归地重复此过程，直到满足停止条件（例如：样本纯度为100\%或者达到最小分裂样本数）。
+\end{itemize}
+决策树最终输出的是每个叶节点对应的犯罪类型，通过这种方式，模型能够基于训练集中的特征和标签学习到如何分类新的犯罪样本。
+
+\subsubsection{ID3算法}
+ID3（Iterative Dichotomiser 3）算法使用**信息增益**来选择最佳特征进行节点分裂。在每个节点，ID3算法计算所有特征的信息增益，并选择信息增益最大的特征作为划分依据。该算法适用于离散型特征，并且在每次分裂时会选择最能减少熵的特征。
+
+\subsubsection{C4.5算法}
+C4.5是ID3的改进版本，主要区别在于：
+\begin{itemize}
+    \item C4.5使用**增益比**（Gain Ratio）代替信息增益，避免了ID3偏好选择取值较多的特征的问题。
+    \item C4.5能够处理**连续型特征**，通过选择一个合适的划分点将连续特征离散化。
+    \item C4.5引入了剪枝技术，通过减少树的复杂度来提高模型的泛化能力。
+\end{itemize}
+C4.5在信息增益的基础上，通过计算每个特征的增益比来避免偏向选择某些特征，使得算法在处理实际问题时更加稳定和有效。
+
 \section{实验结论与分析}
+
+在本实验中，我们使用决策树对犯罪数据集进行了分类，结果如下：
+
+\subsection{评估指标}
+模型在测试集上的评估结果为：
+\begin{itemize}
+    \item 准确率 (Accuracy): 0.9254
+    \item 精确度 (Precision, macro): 0.6611
+    \item 召回率 (Recall, macro): 0.5843
+    \item F1得分 (F1-score, macro): 0.6144
+\end{itemize}
+
+\subsection{混淆矩阵}
+混淆矩阵如下所示：
+\[
+\begin{bmatrix}
+13556 & 0 & 33 & 14 \\
+948 & 0 & 0 & 0 \\
+63 & 0 & 235 & 0 \\
+60 & 0 & 0 & 74 \\
+\end{bmatrix}
+\]
+
+\subsection{分析与讨论}
+尽管模型在准确率方面表现较好（92.54\%），但精确度和召回率较低，特别是对于某些类别的预测效果较差。混淆矩阵表明，类别 1 和类别 4 的样本被正确分类的比例较高，而类别 2 和 3 的样本则被较多地误分类为其他类别。该结果表明决策树对于某些类别的分类能力较弱，可能需要通过特征工程或改进模型（如使用剪枝）来提高性能。
+
 \section{实验代码}
+\begin{lstlisting}[language=Python]
+import csv
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
+from sklearn.metrics import (
+    accuracy_score,
+    precision_recall_fscore_support,
+    confusion_matrix,
+)
+from sklearn.tree import DecisionTreeClassifier
+
+def load_data(path):
+    X = []
+    y = []
+    with open(path, encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            # 选择部分离散特征
+            # 你可按需要修改
+            feature_row = [
+                row["DayOfWeek"],
+                row["PdDistrict"],
+                row["Descript"],
+            ]
+            X.append(feature_row)
+            y.append(row["Category"])
+    return X, y
+
+def encode_categorical_features(X, y):
+    # 转置：列处理
+    X = np.array(X)
+    n_features = X.shape[1]
+
+    encoders = []
+    X_encoded = np.empty_like(X, dtype=int)
+
+    # 对每列进行 LabelEncoder
+    for i in range(n_features):
+        le = LabelEncoder()
+        X_encoded[:, i] = le.fit_transform(X[:, i])
+        encoders.append(le)
+
+    # 对 y 编码
+    le_y = LabelEncoder()
+    y_encoded = le_y.fit_transform(y)
+
+    return X_encoded, y_encoded, encoders, le_y
+
+def load_and_encode(path: str):
+    X, y = load_data(path)
+    return encode_categorical_features(X, y)
+
+# 评估
+def evaluate(y_true, y_pred):
+    print("====== Evaluation ======")
+
+    acc = accuracy_score(y_true, y_pred)
+    print(f"Accuracy: {acc:.4f}")
+
+    # precision, recall, f1 for each class (macro means均值)
+    precision, recall, f1, support = precision_recall_fscore_support(
+        y_true, y_pred, average="macro", zero_division=0
+    )
+
+    print(f"Precision (macro): {precision:.4f}")
+    print(f"Recall (macro):    {recall:.4f}")
+    print(f"F1-score (macro):  {f1:.4f}")
+
+    print("\nConfusion Matrix:")
+    cm = confusion_matrix(y_true, y_pred)
+    print(cm)
+
+
+if __name__ == "__main__":
+    X_train, y_train, _, _ = load_and_encode("./EX5/data/train.csv")
+    X_test, y_test, _, _ = load_and_encode("./EX5/data/test.csv")
+
+    clf = DecisionTreeClassifier(max_depth=4)
+    clf.fit(X=X_train, y=y_train)
+    y_pred = clf.predict(X=X_test)
+    evaluate(y_test, y_pred)
+\end{lstlisting}
 \printbibliography
 
 \end{document}

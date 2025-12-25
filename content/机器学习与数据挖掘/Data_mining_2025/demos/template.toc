@@ -30,12 +30,31 @@
 \contentsline {section}{\numberline {4.1}实验要求}{20}{section.4.1}%
 \contentsline {section}{\numberline {4.2}数据分析与处理}{20}{section.4.2}%
 \contentsline {section}{\numberline {4.3}实验步骤与原理}{20}{section.4.3}%
-\contentsline {section}{\numberline {4.4}实验结论与分析}{20}{section.4.4}%
-\contentsline {section}{\numberline {4.5}实验代码}{20}{section.4.5}%
-\contentsline {chapter}{\numberline {5}第五次上机实验}{21}{chapter.5}%
-\contentsline {section}{\numberline {5.1}实验要求}{21}{section.5.1}%
-\contentsline {section}{\numberline {5.2}数据分析与处理}{21}{section.5.2}%
-\contentsline {section}{\numberline {5.3}实验步骤与原理}{21}{section.5.3}%
-\contentsline {section}{\numberline {5.4}实验结论与分析}{21}{section.5.4}%
-\contentsline {section}{\numberline {5.5}实验代码}{21}{section.5.5}%
+\contentsline {subsection}{\numberline {4.3.1}贝叶斯分类器原理}{20}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}分类规则}{21}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}朴素贝叶斯分类器}{21}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}实验中的朴素贝叶斯方法}{21}{subsection.4.3.4}%
+\contentsline {section}{\numberline {4.4}实验结论与分析}{22}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}评估指标}{22}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}混淆矩阵}{22}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}分析与讨论}{22}{subsection.4.4.3}%
+\contentsline {section}{\numberline {4.5}实验代码}{23}{section.4.5}%
+\contentsline {chapter}{\numberline {5}第五次上机实验}{28}{chapter.5}%
+\contentsline {section}{\numberline {5.1}实验要求}{28}{section.5.1}%
+\contentsline {section}{\numberline {5.2}数据分析与处理}{28}{section.5.2}%
+\contentsline {section}{\numberline {5.3}实验步骤与原理}{28}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}决策树原理}{28}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Hunt算法}{28}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}节点分裂规则}{29}{subsection.5.3.3}%
+\contentsline {subsubsection}{熵}{29}{subsubsection*.2}%
+\contentsline {subsubsection}{节点样本纯度}{29}{subsubsection*.3}%
+\contentsline {subsubsection}{信息增益}{30}{subsubsection*.4}%
+\contentsline {subsection}{\numberline {5.3.4}实验中的决策树使用方法}{30}{subsection.5.3.4}%
+\contentsline {subsubsection}{ID3算法}{30}{subsubsection*.5}%
+\contentsline {subsubsection}{C4.5算法}{30}{subsubsection*.6}%
+\contentsline {section}{\numberline {5.4}实验结论与分析}{31}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}评估指标}{31}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}混淆矩阵}{31}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}分析与讨论}{31}{subsection.5.4.3}%
+\contentsline {section}{\numberline {5.5}实验代码}{31}{section.5.5}%
 \contentsfinish 
